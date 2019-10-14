@@ -1,7 +1,10 @@
 %header.header
   .header__box
-    .header__box--inside
-      %h1.header__box--inside__title Red Donation
+    .header__box--inside.row
+      .header__box--inside__textbox.col-6{style: 'padding: 0 3%'}
+        = fa_icon "hand-holding-heart", class: 'icon fa-flip-horizontal'
+        %h1.header__box--inside__textbox__title{style: 'margin: 0'} Red Donation
+        = fa_icon "hand-holding-heart", class: 'icon'
 %nav.navbar.navbar-expand-lg.navbar-light{style: 'background-color: #b7b7ff'}
   %span.navbar-brand.mb-0.h1
     %B
