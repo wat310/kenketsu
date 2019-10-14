@@ -2,5 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   # root "users#show"
   root "users#index"
-  resources :users
+  resources :users do
+    member do
+      get :mypage
+      get :record
+      get :achievement
+    end
+  end
 end

@@ -4,4 +4,13 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def mypage
+  end
+
+  def record
+  end
+
+  def acievement
+  end
 end
