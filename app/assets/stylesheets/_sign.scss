@@ -1,0 +1,53 @@
+.sign_box {
+
+  .sign_main {
+    margin: 0 auto;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    
+    .sign_title {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .outside_field {
+      background-color: aliceblue;
+      // border: solid 1.5px black;
+      padding: 20px 20px 0 20px;
+
+      
+
+      .field {
+        margin-bottom: 20px;
+  
+        .input {
+          width: 350px;
+          height: 50px;
+          padding: 10px;
+        }
+      }
+  
+      .submit_btn {
+        width: 70%;
+        // margin-bottom: 15px;
+      }
+
+      .lower_btn {
+        width: 50%;
+      }
+
+      .login_text {
+        color: #ff962d;
+      }
+    }
+    #upper {
+      border: solid 1.5px black;
+    }
+    #lower {
+      border-left: solid 1.5px black;
+      border-right: solid 1.5px black;
+      border-bottom: solid 1.5px black;
+    }
+  }
+}
