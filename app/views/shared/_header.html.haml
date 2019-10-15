@@ -1,33 +1,7 @@
-%header.header
+%header.header.mx-suto
   .header__box
     .header__box--inside.row
       .header__box--inside__textbox.col-6{style: 'padding: 0 3%'}
         = fa_icon "hand-holding-heart", class: 'icon fa-flip-horizontal'
         %h1.header__box--inside__textbox__title{style: 'margin: 0'} Red Donation
         = fa_icon "hand-holding-heart", class: 'icon'
-%nav.navbar.navbar-expand-lg.navbar-light{style: 'background-color: #b7b7ff'}
-  %span.navbar-brand.mb-0.h1
-    %B
-      %span
-        %I{style: 'color: #ff0f87'} @user
-    %B さんでログイン中です
-  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-    %span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    -# %ul.navbar-nav.mr-auto
-    %ul.navbar-nav
-      %li.nav-item.active
-        = link_to "Home画面へ", root_path, class: "nav-link nav-top"
-      %li.nav-item.active
-        = link_to "マイページ編集", root_path, class: "nav-link"
-        -# %a.nav-link{:href => "#"}
-          Home画面へ
-          -# %span.sr-only (current)
-      %li.nav-item.dropdown
-        -# %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
-          ページリンク
-        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          = link_to "献血履歴", root_path, class: "dropdown-item"
-          .dropdown-divider
-          = link_to "献血実績", root_path, class: "dropdown-item"
