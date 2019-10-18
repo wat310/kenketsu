@@ -1,0 +1,22 @@
+= render partial:"shared/header"
+= render partial:"shared/header_nav", locals: { user: @user }
+
+.record_main
+  .record_main__box.row
+    .record_main__box__text.mx-auto
+      %h2 献血履歴
+  .record_main__box.row
+    .record_main__box__add-btn.mx-auto
+      = link_to "検査履歴の作成", new_user_record_path(@user), class: 'btn btn-info'
+
+  - if @record.empty?
+    .empty_text.row
+      .empty_text__main.mx-auto
+        閲覧可能な献血履歴はありません
+        %br
+        .under_text
+          検査履歴の作成ボタンで記録を作成してください
+  - else
+    aaaa
+  -# - binding.pry
+

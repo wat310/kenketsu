@@ -9,6 +9,6 @@ class AddNicknameToUsers < ActiveRecord::Migration[5.2]
   def down
     remove_column :users, :nickname
     remove_column :users, :avatar
-    remove_column :users, :nickname
+    remove_column :users, :message
   end
 end

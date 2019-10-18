@@ -24,6 +24,6 @@
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
           ページリンク
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          = link_to "献血履歴", root_path, class: "dropdown-item"
+          = link_to "献血履歴", user_records_path(@user), class: "dropdown-item"
           .dropdown-divider
           = link_to "献血実績", root_path, class: "dropdown-item"

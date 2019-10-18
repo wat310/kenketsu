@@ -1,0 +1,88 @@
+.record_main {
+
+  &__box {
+
+    &__text {
+      margin-top: 15px;
+    }
+
+    &__add-btn {
+      margin-top: 15px;
+    }
+  }
+
+  .input_top {
+    padding: 0 15px;
+  }
+
+  .record_box {
+    // padding: 0 30px;
+
+    &--outside {
+      padding: 0;
+    }
+
+    .field_main {
+      padding: 30px 15px;
+      border: solid 1.5px #b2b2b2;
+      margin-top: 10px;
+    }
+
+    .input_field{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: solid 1px #9caeb7;
+      border-radius: 10px;
+      background-color: #eaffea;
+  
+      .record_select {
+        height: 40px;
+      }
+  
+      .record_date {
+        height: 40px;
+        text-align: center;
+      }
+  
+      .record_label {
+        line-height: 40px;
+        margin: 0;
+      }
+  
+      &__text {
+        margin: 0;
+      }
+  
+      .text_field {
+        height: 40px;
+        width: 200px;
+        padding: 10px;
+        // border: solid 1px black;
+      }
+    }
+  }
+
+  .btn_box {
+    margin: 30px 0;
+  }
+}
+
+.input_field .row {
+  padding: 0;
+}
+
+.empty_text {
+
+  &__main {
+    color: red;
+    font-size: 20px;
+    margin:20px;
+    text-align: center;
+
+    .under_text {
+      text-align: left;
+    }
+  }
+}
+

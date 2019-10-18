@@ -24,6 +24,14 @@
             .field__input__label
               = f.label :password_confirmation, "パスワード再入力"
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "input", placeholder:"打ち間違えのないように注意"
+        .radio
+          = f.label :sex, "男性"
+          = f.radio_button :sex, "男"
+        .radio
+          = f.label :sex, "女性"
+          = f.radio_button :sex, "女"
+      
+
         .field.row
           = f.submit "新規登録", class:'btn btn-primary mx-auto submit_btn'
       .outside_field#lower
@@ -32,4 +40,3 @@
             アカウントをお持ちの方はこちら
         .field.row
           = link_to'ログイン', new_user_session_path, class: 'btn btn-success lower_btn mx-auto'
-    -# = render "devise/shared/links"

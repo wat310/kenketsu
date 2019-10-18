@@ -1,0 +1,7 @@
+ja:
+  enums:
+    record:
+      inspection_method:
+        four: 献血
+        two: 献血
+        component: 成分献血
