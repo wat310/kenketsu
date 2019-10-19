@@ -1,0 +1,34 @@
+.index_box {
+
+  &__field .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  
+
+  &__field {
+
+
+    &__category {
+      // border: solid 1.5px #b2b2b2;
+      background-color: aquamarine;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+
+      &__result {
+        height: 40px;
+        background-color: white;
+        padding: 5px 15px;
+        border: solid 1.5px #b2b2b2;
+      }
+      
+      .result2 {
+        border: none;
+        border-top: solid 1.5px #b2b2b2;
+        border-bottom: solid 1.5px #b2b2b2;
+      }
+    }
+  }
+}
