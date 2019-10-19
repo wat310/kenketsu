@@ -1,20 +1,27 @@
 .index_box {
 
-  &__field .row {
-    margin-right: 0;
-    margin-left: 0;
-  }
+  // &__field .row {
+  //   margin-right: 0;
+  //   margin-left: 0;
+  // }
 
   
 
   &__field {
 
+    #date {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
 
     &__category {
       // border: solid 1.5px #b2b2b2;
       background-color: aquamarine;
-      margin-top: 5px;
-      margin-bottom: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
 
 
       &__result {

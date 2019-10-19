@@ -1,0 +1,98 @@
+.index_box.row
+  .index_box__title.col-12
+    %h4.text-center 血球計数検査
+
+  // 日付の表記
+  .index_box__field.col-12
+    .index_box__field__date.row#date
+      // 位置合わせ用のマージン
+      .col-lg-3.col-0
+      -# - @records.each.with_index(1) do |record, i|
+      - records.each do |record|
+        .index_box__field__date__result.col-4.col-lg-2.text-center
+          - if record.present?
+            = record.donation_day
+          - else record.present?
+            記録なし
+
+    .col-12
+      .index_box__field__category.row
+        .index_box__field__category__title.col-12.col-lg-3
+          赤血球数(RBC)
+        - records.each do |record|
+          .index_box__field__category__result.col-4.col-lg-2.text-center
+            - if record.present?
+              = record.RBC
+            - else
+              記録なし
+        
+
+      .index_box__field__category.row
+        .index_box__field__category__title.col-12.col-lg-3
+          ヘモグロビン量(Hb)
+        - records.each do |record|
+          .index_box__field__category__result.col-4.col-lg-2.text-center
+            - if record.present?
+              = record.Hb
+            - else
+              記録なし
+
+      .index_box__field__category.row
+        .index_box__field__category__title.col-12.col-lg-3
+          ヘマトクリット量(Ht)
+        - records.each do |record|
+          .index_box__field__category__result.col-4.col-lg-2.text-center
+            - if record.present?
+              = record.Ht
+            - else
+              記録なし
+
+      .index_box__field__category.row
+        .index_box__field__category__title.col-12.col-lg-3
+          平均赤血球容積(MCV)
+        - records.each do |record|
+          .index_box__field__category__result.col-4.col-lg-2.text-center
+            - if record.present?
+              = record.MCV
+            - else
+              記録なし
+
+      .index_box__field__category.row
+        .index_box__field__category__title.col-12.col-lg-3
+          平均赤血球ヘモグロビン量(MCH)
+        - records.each do |record|
+          .index_box__field__category__result.col-4.col-lg-2.text-center
+            - if record.present?
+              = record.MCH
+            - else
+              記録なし
+
+      .index_box__field__category.row
+        .index_box__field__category__title.col-12.col-lg-3
+          平均赤血球ヘモグロビン濃度(MCHC)
+        - records.each do |record|
+          .index_box__field__category__result.col-4.col-lg-2.text-center
+            - if record.present?
+              = record.MCHC
+            - else
+              記録なし
+
+      .index_box__field__category.row
+        .index_box__field__category__title.col-12.col-lg-3
+          白血球数(WBC)
+        - records.each do |record|
+          .index_box__field__category__result.col-4.col-lg-2.text-center
+            - if record.present?
+              = record.WBC
+            - else
+              記録なし
+
+      .index_box__field__category.row
+        .index_box__field__category__title.col-12.col-lg-3
+          血小板数(PLT)
+        - records.each do |record|
+          .index_box__field__category__result.col-4.col-lg-2.text-center
+            - if record.present?
+              = record.PLT
+            - else
+              記録なし

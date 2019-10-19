@@ -18,54 +18,6 @@
           検査履歴の作成ボタンで記録を作成してください
   - else
     これまでの献血記録
-    .index_box.row
-      .index_box__title.col-12
-        %h4.text-center 生化学検査
-      .index_box__field.col-12
-        .index_box__field__category.row
-          // 日付の表記
-          .index_box__field__category__date.col-12
-            .index_box__field__category__date__inner.row
-              // 位置合わせ用のマージン
-              .col-lg-3.col-0
-              - @records.each do |record|
-                .index_box__field__category__date__inner_result.col-4.col-lg-2.text-center
-                  - if record.present?
-                    = record.donation_day
-                  - else
-                    記録なし
-                  -# .index_box__field__category__date__inner_result.col-4
-                  -#   - if @record3.present?
-                  -#     = @record3.donation_day
-                  -#   - else
-                  -#     記録なし
-                  -# .index_box__field__category__date__inner_result.col-4
-                  -#   - if @record2.present?
-                  -#     = @record2.donation_day
-                  -#   - else
-                  -#     記録なし
-                  -# .index_box__field__category__date__inner_result.col-4
-                  -#   = @record1.donation_day
-        .index_box__field__category.row
-          .index_box__field__category__title.col-12.col-lg-3
-            ALT(GPT)
-          -# - @records.each do |record|
-          -#   .index_box__field__category__result.col-4.col-lg-2.text-center
-          -#     - if record.present?
-          -#       = record.ALT
-          -#     - else
-          -#       記録なし
-          .index_box__field__category__result.col-4.col-lg-2.text-center
-            - if @record3.present?
-              = @record3.ALT
-            - else
-              記録なし
-          .index_box__field__category__result.col-4.col-lg-2.text-center.result2
-            - if @record2.present?
-              = @record2.ALT
-            - else
-              記録なし
-          .index_box__field__category__result.col-4.col-lg-2.text-center
-            = @record1.ALT
+    = render partial:"shared/record_biochemistry", locals: { records: @records }
 
-
+    = render partial:"shared/record_blood_cell", locals: { records: @records, user: @user }

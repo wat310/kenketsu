@@ -3,17 +3,14 @@ class RecordsController < ApplicationController
 
   def index
     @record = Record.all
-    # @records = Record.where(user_id: current_user.id).limit(3).order(:created_at)
-    @records = Record.where(user_id: current_user.id)
+    @records_search = Record.where(user_id: current_user.id).limit(3).order(:created_at)
+    @records = @records_search.to_a
 
-    # while @records.count < 3
-    #   @records << nil
-    # end
+    @num = 3 - @records.count
 
-    # binding.pry
-    @record1 = @records[0]
-    @record2 = @records[1]
-    @record3 = @records[2]
+    @num.times do
+      @records << nil
+    end
   end
 
   def new
