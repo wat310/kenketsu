@@ -14,9 +14,7 @@ ActiveRecord::Schema.define(version: 2019_10_16_122429) do
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "inspection_method", null: false
-    t.integer "donation_year", null: false
-    t.integer "donation_month", null: false
-    t.integer "donation_day", null: false
+    t.date "donation_day", null: false
     t.integer "ALT"
     t.integer "GTP"
     t.integer "TP"

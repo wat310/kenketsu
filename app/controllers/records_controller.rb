@@ -12,12 +12,11 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
+    # binding.pry
     if @record.save
-      # redirect_to user_records_path(@user)
       redirect_to records_path
     else
-      # redirect_to new_user_record_path(@user)
-      redirect_to root_path
+      redirect_to new_record_path
     end
 
   end
@@ -31,9 +30,7 @@ class RecordsController < ApplicationController
 
   def record_params
     params.require(:record).permit(
-      :inspectiopn_method,
-      :donation_year,
-      :donation_month,
+      :inspection_method,
       :donation_day,
       :ALT,
       :GTP,

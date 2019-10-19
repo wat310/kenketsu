@@ -5,38 +5,33 @@
   .record_main__box.row
     .record_main__box__text.mx-auto
       %h2 献血記録の作成
-  = form_with model: @record, url: new_user_record_path(@user), local: true do |f|
+  -# = form_with model: @record, url: new_record_path, local: true do |f|
+  = form_for @record do |f|
     .input_top
       .record_box.row
         .field_main.col-sm-12
+          %h4.box_title.text-center 献血方法、献血日
           .input_field.col-lg-6.mx-auto
-            -# = f.label :inspection_method do
-            -#   献血方法
-            -#   = f.select :inspection_method, Record.inspection_methods_i18n.invert, { prompt: "---" }, class: "record_select"
             = f.label :inspection_method, class: "record_label row" do
-              .record_label__inner.col-12.col-lg-6
+              .record_label__inner.inner_text.col-12.col-lg-6
                 献血方法
               .record_label__inner.col-12.col-lg-6
                 = f.select :inspection_method, Record.inspection_methods_i18n.invert, { prompt: "---" }, class: "record_select col-6 col-lg-12"
 
           .input_field.col-lg-6.mx-auto
-            = f.label :donation_year, class: "record_label row" do
+            = f.label :donation_day, class: "record_label row" do
               .record_label__inner.col-12.col-lg-6
                 献血日
                 %br
                 (タップorクリックで選択)
               .record_label__inner.col-12.col-lg-6
-                = f.date_field :donation_year, class: "record_date"
+                = f.date_field :donation_day, class: "record_date"
 
     .record_box.row
       .record_box--outside.col-sm-12
         .record_field.col-sm-6.float-left
           .field_main
-            %h4.text-center 生化学検査
-            -# .input_field
-            -#   = f.label :ALT, class: "record_label" do
-            -#     ALT(GPT)
-            -#     = f.text_field :ALT, class: "text_field float-sm-right", placeholder: "数字で入力"
+            %h4.box_title.text-center 生化学検査
             .input_field
               = f.label :ALT, class: "record_label row" do
                 .record_label__inner.col-12.col-lg-5
@@ -75,7 +70,7 @@
 
         .record_field.col-sm-6.float-right
           .field_main
-            %h4.text-center 血球計数検査
+            %h4.box_title.text-center 血球計数検査
             .input_field
               = f.label :RBC, class: "record_label row" do
                 .record_label__inner.col-12.col-lg-6
@@ -117,4 +112,5 @@
                   血小板数(PLT)
                 = f.text_field :PLT, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
     .btn_box.row
-      = f.submit "記録する", class: "btn btn-primary btn-block btn-lg record_btn mx-auto"
+      = f.submit "記録する", class: "btn btn-primary btn-block col-12 col-lg-6 record_btn mx-auto"
+      = fa_icon "save", class: "save"

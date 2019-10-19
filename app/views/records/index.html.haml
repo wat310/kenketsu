@@ -7,7 +7,7 @@
       %h2 献血履歴
   .record_main__box.row
     .record_main__box__add-btn.mx-auto
-      = link_to "検査履歴の作成", new_user_record_path(@user), class: 'btn btn-info'
+      = link_to "検査履歴の作成", new_record_path, class: 'btn btn-info'
 
   - if @record.empty?
     .empty_text.row
@@ -17,6 +17,6 @@
         .under_text
           検査履歴の作成ボタンで記録を作成してください
   - else
-    aaaa
-  -# - binding.pry
+    これまでの献血記録
+    
 
