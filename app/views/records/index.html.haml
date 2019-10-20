@@ -9,7 +9,7 @@
     .record_main__box__add-btn.mx-auto
       = link_to "検査履歴の作成", new_record_path, class: 'btn btn-info'
 
-  - if @record.empty?
+  - if @records[0] == nil
     .empty_text.row
       .empty_text__main.mx-auto
         閲覧可能な献血履歴はありません
@@ -17,7 +17,12 @@
         .under_text
           検査履歴の作成ボタンで記録を作成してください
   - else
-    これまでの献血記録
+    .record_title.row
+      -# .mx-auto
+      .record_title--upper.col-12.col-lg-6.text-center.text-lg-right.float-left
+        %h5 これまでの献血記録
+      .record_title--lower.col-12.col-lg-6.text-center.text-lg-left.float-right
+        %h5 (過去3回分を表示します)
     = render partial:"shared/record_biochemistry", locals: { records: @records }
 
     = render partial:"shared/record_blood_cell", locals: { records: @records, user: @user }

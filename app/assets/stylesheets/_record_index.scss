@@ -1,11 +1,11 @@
 .index_box {
 
-  // &__field .row {
-  //   margin-right: 0;
-  //   margin-left: 0;
+  // &__title {
+  //   padding: 10px 0 0 0;
+  //   margin-left: 15px;
+  //   margin-right: 15px;
+  //   border-top: dashed 2px #dddddd;
   // }
-
-  
 
   &__field {
 
@@ -17,7 +17,8 @@
 
     &__category {
       // border: solid 1.5px #b2b2b2;
-      background-color: aquamarine;
+      background-color: #c1e4e9;
+      border-radius: 5px;
       margin-top: 10px;
       margin-bottom: 10px;
       padding-top: 5px;
@@ -28,14 +29,20 @@
         height: 40px;
         background-color: white;
         padding: 5px 15px;
+        // margin-top: 5px;
+        // margin-bottom: 5px;
         border: solid 1.5px #b2b2b2;
       }
-      
-      .result2 {
-        border: none;
-        border-top: solid 1.5px #b2b2b2;
-        border-bottom: solid 1.5px #b2b2b2;
+
+      .standard {
+        color: red;
       }
+
+      .card {
+        padding: 20px 0;
+        margin-top: 10px;
+      }
+
     }
   }
 }

@@ -87,6 +87,14 @@
       line-height: 38px;
     }
   }
+
+  .record_title {
+    margin: 10px 0;
+
+    &--upper, &--lower {
+      padding: 0;
+    }
+  }
 }
 
 .input_field .row {
