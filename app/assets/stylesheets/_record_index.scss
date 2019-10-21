@@ -20,7 +20,14 @@
 
       &__text {
         background-color: $day-background;
+        border: $date-outside-border;
+        border-right: $date-border;
       }
+
+      // .date_outside {
+      //   border: $date-outside-border;
+      //   border-left: $date-border;
+      // }
 
       &__result {
         padding: 0;
@@ -28,15 +35,26 @@
         color: white;
       }
 
-      .result2 {
-        border-right: solid 1.5px white;
-        border-left: solid 1.5px white;
+      .date_result1 {
+        border: $date-outside-border;
+        border-right: none;
+        border-left: none;
+      }
+
+      .date_result2 {
+        border: $date-outside-border;
+        border-right: $date-border;
+        border-left: $date-border;
+      }
+
+      .date_result3 {
+        border: $date-outside-border;
+        border-left: none;
       }
     }
 
 
     &__category {
-      // border: solid 1.5px #b2b2b2;
       background-color: #c1e4e9;
       border-radius: 5px;
       margin-top: 10px;
@@ -49,18 +67,15 @@
         height: 40px;
         background-color: white;
         padding: 5px 15px;
-        // margin-top: 5px;
-        // margin-bottom: 5px;
-        // border: solid 1.5px #b2b2b2;
       }
 
       .result1, .result3 {
-        border: solid 1.5px #b2b2b2;
+        border: $result-border;
       }
 
       .result2 {
-        border-top: solid 1.5px #b2b2b2;
-        border-bottom: solid 1.5px #b2b2b2;
+        border-top: $result-border;
+        border-bottom: $result-border;
       }
 
       .standard {

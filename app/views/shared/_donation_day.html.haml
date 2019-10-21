@@ -4,7 +4,7 @@
       献血日
   .col-12.col-lg-6.px-lg-0
     - records.each.with_index(1) do |record, i|
-      .index_box__field__date__result.col-4.text-center.float-left{class: "result#{i}"}
+      .index_box__field__date__result.col-4.text-center.float-left{class: "date_result#{i}"}
         - if record.present?
           = record.donation_day
         - else record.present?
