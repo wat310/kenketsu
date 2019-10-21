@@ -1,0 +1,122 @@
+.record_main {
+
+  &__box {
+
+    &__text {
+      margin-top: 15px;
+    }
+
+    &__add-btn {
+      margin-top: 15px;
+    }
+  }
+
+  .input_top {
+    padding: 0 15px;
+  }
+
+  .record_box {
+    // padding: 0 30px;
+
+    &--outside {
+      padding: 0;
+    }
+
+    .field_main {
+      padding: 30px 15px;
+      border: solid 1.5px $border-gray;
+      margin-top: 10px;
+
+      .box_title {
+        font-family: 'Hiragino Maru Gothic Pro';
+        color: #00ac9b;
+      }
+    }
+
+    .input_field{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: solid 1px #9caeb7;
+      border-radius: 10px;
+      background-color: #eaffea;
+  
+      .record_select {
+        height: 40px;
+      }
+  
+      .record_date {
+        height: 50px;
+        font-size: 20px;
+        text-align: center;
+      }
+  
+      .record_label {
+        line-height: 40px;
+        margin: 0;
+
+        // .inner_text {
+          
+        // }
+      }
+  
+      &__text {
+        margin: 0;
+      }
+  
+      .text_field {
+        height: 40px;
+        width: 200px;
+        padding: 10px;
+        // border: solid 1px black;
+      }
+    }
+  }
+
+  .btn_box {
+    margin: 30px 0;
+
+    .record_btn {
+      position: relative;
+    }
+    .save {
+      position: absolute;
+      font-size: 30px;
+      color: white;
+      left: calc(50% - 80px);
+      line-height: 38px;
+    }
+  }
+
+  .record_title {
+    margin: 10px 0;
+
+    &--upper, &--lower {
+      padding: 0;
+    }
+  }
+
+  .bottom_box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.input_field .row {
+  padding: 0;
+}
+
+.empty_text {
+
+  &__main {
+    color: red;
+    font-size: 20px;
+    margin:20px;
+    text-align: center;
+
+    .under_text {
+      text-align: left;
+    }
+  }
+}
+

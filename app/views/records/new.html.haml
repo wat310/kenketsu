@@ -1,0 +1,116 @@
+= render partial:"shared/header"
+= render partial:"shared/header_nav", locals: { user: @user }
+
+.record_main
+  .record_main__box.row
+    .record_main__box__text.mx-auto
+      %h2 献血記録の作成
+  -# = form_with model: @record, url: new_record_path, local: true do |f|
+  = form_for @record do |f|
+    .input_top
+      .record_box.row
+        .field_main.col-sm-12
+          %h4.box_title.text-center 献血方法、献血日
+          .input_field.col-lg-6.mx-auto
+            = f.label :inspection_method, class: "record_label row" do
+              .record_label__inner.inner_text.col-12.col-lg-6
+                献血方法
+              .record_label__inner.col-12.col-lg-6
+                = f.select :inspection_method, Record.inspection_methods_i18n.invert, { prompt: "---" }, class: "record_select col-6 col-lg-12"
+
+          .input_field.col-lg-6.mx-auto
+            = f.label :donation_day, class: "record_label row" do
+              .record_label__inner.col-12.col-lg-6
+                献血日
+                %br
+                (タップorクリックで選択)
+              .record_label__inner.col-12.col-lg-6
+                = f.date_field :donation_day, class: "record_date"
+
+    .record_box.row
+      .record_box--outside.col-sm-12
+        .record_field.col-sm-6.float-left
+          .field_main
+            %h4.box_title.text-center 生化学検査
+            .input_field
+              = f.label :ALT, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-5
+                  ALT(GPT)
+                = f.text_field :ALT, class: "text_field col-12 col-lg-7", placeholder: "数字で入力"
+            .input_field
+              = f.label :GTP, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-5
+                  γ-GTP
+                = f.text_field :GTP, class: "text_field col-12 col-lg-7", placeholder: "数字で入力"
+            .input_field
+              = f.label :TP, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-5
+                  総蛋白 TP
+                = f.text_field :TP, class: "text_field col-12 col-lg-7", placeholder: "数字で入力"
+            .input_field
+              = f.label :ALB, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-5
+                  アルブミン ALB
+                = f.text_field :ALB, class: "text_field col-12 col-lg-7", placeholder: "数字で入力"
+            .input_field
+              = f.label :AperG, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-5
+                  アルブミン対グロブリン比 A/G
+                = f.text_field :AperG, class: "text_field col-12 col-lg-7", placeholder: "数字で入力"
+            .input_field
+              = f.label :CHOL, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-5
+                  コレステロール CHOL
+                = f.text_field :CHOL, class: "text_field col-12 col-lg-7", placeholder: "数字で入力"
+            .input_field
+              = f.label :GA, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-5
+                  グリコアルブミン GA
+                = f.text_field :GA, class: "text_field col-12 col-lg-7", placeholder: "数字で入力"
+
+        .record_field.col-sm-6.float-right
+          .field_main
+            %h4.box_title.text-center 血球計数検査
+            .input_field
+              = f.label :RBC, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-6
+                  赤血球数(RBC)
+                = f.text_field :RBC, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
+            .input_field
+              = f.label :Hb, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-6
+                  ヘモグロビン量(Hb)
+                = f.text_field :Hb, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
+            .input_field
+              = f.label :Ht, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-6
+                  ヘマトクリット量(Ht)
+                = f.text_field :Ht, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
+            .input_field
+              = f.label :MCV, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-6
+                  平均赤血球容積(MCV)
+                = f.text_field :MCV, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
+            .input_field
+              = f.label :MCH, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-6
+                  平均赤血球ヘモグロビン量(MCH)
+                = f.text_field :MCH, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
+            .input_field
+              = f.label :MCHC, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-6
+                  平均赤血球ヘモグロビン濃度(MCHC)
+                = f.text_field :MCHC, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
+            .input_field
+              = f.label :WBC, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-6
+                  白血球数(WBC)
+                = f.text_field :WBC, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
+            .input_field
+              = f.label :PLT, class: "record_label row" do
+                .record_label__inner.col-12.col-lg-6
+                  血小板数(PLT)
+                = f.text_field :PLT, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
+    .btn_box.row
+      = f.submit "記録する", class: "btn btn-primary btn-block col-12 col-lg-6 record_btn mx-auto"
+      = fa_icon "save", class: "save"

@@ -28,7 +28,8 @@ $(document).on('turbolinks:load', function() {
       }
       else {
         nav_li.css ({
-          'border': 'none'
+          'border': 'none',
+          'padding-left': '8px'
         })
         nav_top.css ({
           'margin-top': '0'

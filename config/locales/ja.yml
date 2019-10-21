@@ -1,0 +1,7 @@
+ja:
+  enums:
+    record:
+      inspection_method:
+        four: 全献血400ml
+        two: 全献血200ml
+        component: 成分献血

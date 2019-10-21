@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_074725) do
+ActiveRecord::Schema.define(version: 2019_10_16_122429) do
+
+  create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "inspection_method", null: false
+    t.date "donation_day", null: false
+    t.integer "ALT"
+    t.integer "GTP"
+    t.integer "TP"
+    t.integer "ALB"
+    t.integer "AperG"
+    t.integer "CHOL"
+    t.integer "GA"
+    t.integer "RBC"
+    t.integer "Hb"
+    t.integer "Ht"
+    t.integer "MCV"
+    t.integer "MCH"
+    t.integer "MCHC"
+    t.integer "WBC"
+    t.integer "PLT"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_records_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +47,10 @@ ActiveRecord::Schema.define(version: 2019_10_15_074725) do
     t.string "nickname", null: false
     t.text "avatar"
     t.text "message"
+    t.string "sex", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "records", "users"
 end

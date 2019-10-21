@@ -1,0 +1,92 @@
+.index_box {
+
+  &__title {
+    
+    &__text {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-top: dashed 3px $border-gray;
+    }
+  }
+
+  &__field {
+
+    #date {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &__date {
+
+      &__text {
+        background-color: $day-background;
+        border: $date-outside-border;
+        border-right: $date-border;
+      }
+
+      // .date_outside {
+      //   border: $date-outside-border;
+      //   border-left: $date-border;
+      // }
+
+      &__result {
+        padding: 0;
+        background-color: $day-background;
+        color: white;
+      }
+
+      .date_result1 {
+        border: $date-outside-border;
+        border-right: none;
+        border-left: none;
+      }
+
+      .date_result2 {
+        border: $date-outside-border;
+        border-right: $date-border;
+        border-left: $date-border;
+      }
+
+      .date_result3 {
+        border: $date-outside-border;
+        border-left: none;
+      }
+    }
+
+
+    &__category {
+      background-color: #c1e4e9;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+
+      &__result {
+        height: 40px;
+        background-color: white;
+        padding: 5px 15px;
+      }
+
+      .result1, .result3 {
+        border: $result-border;
+      }
+
+      .result2 {
+        border-top: $result-border;
+        border-bottom: $result-border;
+      }
+
+      .standard {
+        color: red;
+      }
+
+      .card {
+        padding: 20px 0;
+        margin-top: 10px;
+      }
+
+    }
+  }
+}

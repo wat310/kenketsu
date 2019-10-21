@@ -1,0 +1,32 @@
+= render partial:"shared/header"
+= render partial:"shared/header_nav", locals: { user: @user }
+
+.record_main
+  .record_main__box.row
+    .record_main__box__text.mx-auto
+      %h2 献血履歴
+  .record_main__box.row
+    .record_main__box__add-btn.mx-auto
+      = link_to "検査履歴の作成", new_record_path, class: 'btn btn-info'
+
+  - if @records[0] == nil
+    .empty_text.row
+      .empty_text__main.mx-auto
+        閲覧可能な献血履歴はありません
+        %br
+        .under_text
+          検査履歴の作成ボタンで記録を作成してください
+  - else
+    .record_title.row
+      -# .mx-auto
+      .record_title--upper.col-12.col-lg-6.text-center.text-lg-right.float-left
+        %h5 これまでの献血記録
+      .record_title--lower.col-12.col-lg-6.text-center.text-lg-left.float-right
+        %h5 (過去3回分を表示します)
+    = render partial:"shared/record_biochemistry", locals: { records: @records }
+
+    = render partial:"shared/record_blood_cell", locals: { records: @records, user: @user }
+
+  .bottom_box.row
+    .return_btn.btn.btn-secondary.col-10.col-lg-4.mx-auto
+      ページの先頭に戻る

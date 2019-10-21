@@ -1,0 +1,83 @@
+- 7.times do |number|
+  .index_box__field__category.row.d-flex.align-items-center
+    .index_box__field__category__title.col-12.col-lg-3
+      -case number
+      - when 0
+        ALT(GPT)
+      - when 1
+        γ-GTP
+      - when 2
+        総蛋白 TP
+      - when 3
+        アルブミン ALB
+      - when 4
+        アルブミン対グロブリン比 A/G
+      - when 5
+        コレステロール CHOL
+      - when 6
+        グリコアルブミン GA
+      
+    .col-12.col-lg-6.px-lg-0
+      - @records.each.with_index(1) do |record, i|
+        .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
+          - if record.present?
+            -case number
+            - when 0
+              = record.ALT
+            - when 1
+              = record.GTP
+            - when 2
+              = record.TP
+            - when 3
+              = record.ALB
+            - when 4
+              = record.AperG
+            - when 5
+              = record.CHOL
+            - when 6
+              = record.GA
+          - else
+            記録なし
+    // 位置合わせ用のマージン
+    .col-none.col-lg-1
+    // ドロップダウンのボタン
+    .col-7.col-lg-2.mx-auto
+      %button.btn.btn-warning.col-12.col-lg-12.mx-auto{"aria-controls" => "example-#{number}", "aria-expand" => "false", "data-target" => "#example-#{number}", "data-toggle" => "collapse"} 詳細
+    -# #example-8.collapse.col-12.col-lg-10.mx-auto
+    .collapse.col-12.col-lg-10.mx-auto{id: "example-#{number}"}
+      .col-12
+        .card.card-body.row
+          .col-12
+            .standard.col-12.col-lg-6.float-left
+              - case number
+              - when 0
+                基準値: 8〜49 IU/L
+              - when 1
+                基準値: 9〜68 IU/L
+              - when 2
+                基準値: 6.6〜8.2 g/dL
+              - when 3
+                基準値: 4.0〜5.1 g/dL
+              - when 4
+                基準値: 1.3〜2.1
+              - when 5
+                基準値: 140〜259 mg/dL
+              - when 6
+                基準値: 16.5%未満
+            .explanation.col-12.col-lg-6.float-right
+              - case number
+              - when 0
+                肝臓に最も多く含まれる酵素です。肝細胞が破壊されると血液中に流れ出すので、急性肝炎で最も強く上昇し、慢性肝炎や脂肪肝（肥満）などでも上昇します。激しい運動の後に一過性の上昇がみられることがあります。
+              - when 1
+                肝、胆道、膵、腎などに多く含まれる酵素です。上昇する疾患は閉塞性黄疸、肝炎、アルコール性肝障害などです。病気がなくても長期飲酒者では上昇することが多く1ヶ月位禁酒するとある程度正常化します。
+              - when 2
+                血清中には80種類以上の蛋白が含まれ、種々の機能を持ち、生命維持に大きな役割を果たします。その総量を総蛋白として測定します。
+              - when 3
+                血清蛋白の50％以上を占めるアルブミンは、病気などで栄養が悪くなると減少するため、健康診断のスクリーニングとして大きな意味があります。
+              - when 4
+                血清蛋白はアルブミン（A）とグロブリン（G）に分けられ、その比率は健康な人では一定の範囲にありますが、病気によってはその比率が変化（主として減少）してきます。
+              - when 5
+                血清脂質の一つで、一般に脂肪の多い食事を続けていると上昇します。また、肝臓などで作られ、肝、胆道、腎、甲状腺の病気でその値が上下することがあります。血清コレステロールが多くなると動脈硬化を起こしやすいとされています。
+              - when 6
+                糖尿病の検査の一つです。過去2週間の血糖値が低い状態が続いていると低下し、高い状態が続いていると上昇します。糖尿病では基準値より上昇します。基準値範囲内でも15.6%以上の場合は注意が必要です。
+               
