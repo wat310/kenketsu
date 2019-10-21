@@ -1,27 +1,18 @@
 .index_box.row
   .index_box__title.col-12
-    %h4.text-center 生化学検査
+    %h4.index_box__title__text.text-center 生化学検査
 
   // 日付の表記
-  .col-12
+  .col-12{style: "margin-bottom: 20px"}
     .index_box__field.col-12
-      .index_box__field__date.row#date
-        // 位置合わせ用のマージン
-        .col-lg-3.col-0
-        -# - @records.each.with_index(1) do |record, i|
-        - records.each do |record|
-          .index_box__field__date__result.col-4.col-lg-2.text-center
-            - if record.present?
-              = record.donation_day
-            - else record.present?
-              記録なし
+      = render partial:"shared/donation_day", locals: { records: @records }
 
       .index_box__field__category.row.d-flex.align-items-center
         .index_box__field__category__title.col-12.col-lg-3
           ALT(GPT)
         .col-12.col-lg-6
-          - records.each do |record|
-            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left
+          - @records.each.with_index(1) do |record, i|
+            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
               - if record.present?
                 = record.ALT
               - else
@@ -30,7 +21,7 @@
         .col-none.col-lg-1
         // ドロップダウンのボタン
         .col-7.col-lg-2.mx-auto
-          %button.btn.btn-warning.col-12.col-lg-12{"aria-controls" => "example-1", "aria-expand" => "false", "data-target" => "#example-1", "data-toggle" => "collapse"} 詳細
+          %button.detail_btn.btn.btn-warning.col-12.col-lg-12{"aria-controls" => "example-1", "aria-expand" => "false", "data-target" => "#example-1", "data-toggle" => "collapse"} 詳細
         #example-1.collapse.col-12.col-lg-10.mx-auto
           .col-12
             .card.card-body.row
@@ -44,8 +35,8 @@
         .index_box__field__category__title.col-12.col-lg-3
           γ-GTP
         .col-12.col-lg-6
-          - records.each do |record|
-            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left
+          - @records.each.with_index(1) do |record, i|
+            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
               - if record.present?
                 = record.GTP
               - else
@@ -68,8 +59,8 @@
         .index_box__field__category__title.col-12.col-lg-3
           総蛋白 TP
         .col-12.col-lg-6
-          - records.each do |record|
-            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left
+          - @records.each.with_index(1) do |record, i|
+            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
               - if record.present?
                 = record.TP
               - else
@@ -92,8 +83,8 @@
         .index_box__field__category__title.col-12.col-lg-3
           アルブミン ALB
         .col-12.col-lg-6
-          - records.each do |record|
-            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left
+          - @records.each.with_index(1) do |record, i|
+            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
               - if record.present?
                 = record.ALB
               - else
@@ -116,8 +107,8 @@
         .index_box__field__category__title.col-12.col-lg-3
           アルブミン対グロブリン比 A/G
         .col-12.col-lg-6
-          - records.each do |record|
-            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left
+          - @records.each.with_index(1) do |record, i|
+            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
               - if record.present?
                 = record.AperG
               - else
@@ -140,8 +131,8 @@
         .index_box__field__category__title.col-12.col-lg-3
           コレステロール CHOL
         .col-12.col-lg-6
-          - records.each do |record|
-            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left
+          - @records.each.with_index(1) do |record, i|
+            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
               - if record.present?
                 = record.CHOL
               - else
@@ -164,8 +155,8 @@
         .index_box__field__category__title.col-12.col-lg-3
           グリコアルブミン GA
         .col-12.col-lg-6
-          - records.each do |record|
-            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left
+          - @records.each.with_index(1) do |record, i|
+            .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
               - if record.present?
                 = record.GA
               - else

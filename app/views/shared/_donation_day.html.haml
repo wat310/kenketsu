@@ -1,0 +1,11 @@
+.index_box__field__date.row#date
+  .col-12.col-lg-3
+    .index_box__field__date__text.col-12.text-center.mx-auto.mx-lg-0
+      献血日
+  .col-12.col-lg-6
+    - records.each.with_index(1) do |record, i|
+      .index_box__field__date__result.col-4.text-center.float-left{class: "result#{i}"}
+        - if record.present?
+          = record.donation_day
+        - else record.present?
+          記録なし

@@ -24,7 +24,7 @@
 
     .field_main {
       padding: 30px 15px;
-      border: solid 1.5px #b2b2b2;
+      border: solid 1.5px $border-gray;
       margin-top: 10px;
 
       .box_title {
@@ -94,6 +94,11 @@
     &--upper, &--lower {
       padding: 0;
     }
+  }
+
+  .bottom_box {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
