@@ -19,12 +19,12 @@
     &__date {
 
       &__text {
-        background-color: aqua;
+        background-color: $day-background;
       }
 
       &__result {
         padding: 0;
-        background-color: #9caeb7;
+        background-color: $day-background;
         color: white;
       }
 

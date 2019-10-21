@@ -1,0 +1,107 @@
+- 8.times do |number|
+  .index_box__field__category.row.d-flex.align-items-center
+    .index_box__field__category__title.col-12.col-lg-3
+      -case number
+      - when 0
+        赤血球数(RBC)
+      - when 1
+        ヘモグロビン量(Hb)
+      - when 2
+        ヘマトクリット量(Ht)
+      - when 3
+        平均赤血球容積(MCV)
+      - when 4
+        平均赤血球ヘモグロビン量(MCH)
+      - when 5
+        平均赤血球ヘモグロビン濃度(MCHC)
+      - when 6
+        白血球数(WBC)
+      - when 7
+        血小板数(PLT)
+
+    .col-12.col-lg-6.px-lg-0
+      - @records.each.with_index(1) do |record, i|
+        .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
+          - if record.present?
+            -case number
+            - when 0
+              = record.RBC
+            - when 1
+              = record.Hb
+            - when 2
+              = record.Ht
+            - when 3
+              = record.MCV
+            - when 4
+              = record.MCH
+            - when 5
+              = record.MCHC
+            - when 6
+              = record.WBC
+            - when 7
+              = record.PLT
+          - else
+            記録なし
+    // 位置合わせ用のマージン
+    .col-none.col-lg-1
+    // ドロップダウンのボタン
+    .col-7.col-lg-2.mx-auto
+      %button.btn.btn-warning.col-12.col-lg-12.mx-auto{"aria-controls" => "example-#{number + 7}", "aria-expand" => "false", "data-target" => "#example-#{number + 7}", "data-toggle" => "collapse"} 詳細
+    .collapse.col-12.col-lg-10.mx-auto{id: "example-#{number + 7}"}
+      .col-12
+        .card.card-body.row
+          .col-12
+            .standard.col-12.col-lg-6.float-left
+              - case number
+              - when 0
+                - if user.sex == "男"
+                  基準値(男性): 418〜560×10
+                - else
+                  基準値(女性): 384〜504×10
+                %sup 4
+                &#047;μL
+              - when 1
+                - if user.sex == "男"
+                  基準値(男性): 12.7〜17.0
+                - else
+                  基準値(女性): 11.0〜14.8
+                g&#047;dL
+              - when 2
+                - if user.sex == "男"
+                  基準値(男性): 38.8〜50.0
+                - else
+                  基準値(女性): 34.6〜44.6
+                &#037;
+              - when 3
+                基準値: 83.0〜99.5 fL
+              - when 4
+                基準値: 26.8〜33.5 pg
+              - when 5
+                基準値: 31.7〜35.2 %
+              - when 6
+                基準値: 38〜89×10
+                %sup 2
+                &#047;μL
+              - when 7
+                基準値: 17.0〜36.5×10
+                %sup 4
+                &#047;μL
+            .explanation.col-12.col-lg-6.float-right
+              - case number
+              - when 0
+                赤血球は血液の主な細胞成分で、酸素を肺から各組織へ運ぶ働きを持っています。
+              - when 1
+                血液の赤い色は赤血球に含まれるヘモグロビン（血色素）によるもので、赤血球の働きの中心となっています。
+              - when 2
+                ヘマトクリット値は一定の血液量に対する赤血球の割合（容積）をパーセントで表したものです。
+              - when 3
+                赤血球1個の平均的容積、すなわち赤血球の大きさの指標となるもので、赤血球数とヘマトクリット値から算出したものです。
+              - when 4
+                赤血球1個に含まれるヘモグロビン量を平均的に表したもので、赤血球数とヘモグロビン量から算出したものです。
+              - when 5
+                赤血球の一定容量に対するヘモグロビン量の比をパーセントで表したもので、ヘモグロビン量とヘマトクリット値から算出したものです。
+              - when 6
+                白血球は細菌などを貪食し、免疫情報を伝達し、さらに免疫能を発現して生体防御にかかわっています。細菌感染症があると一般に白血球数は増加しますが、ウイルス感染症の場合はかえって減少することもあります。
+              - when 7
+                血小板は出血を止めるための重要な働きを持ち、この値が極端に減少すると出血を起こしやすくなります。
+               
