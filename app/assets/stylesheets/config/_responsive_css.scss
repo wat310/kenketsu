@@ -3,12 +3,10 @@ html {
 	font-size: 62.5%; /* 16px x 0.625 = 10px(=1rem) */
 }
 
-
-
 @media screen and (max-width:767px) {
   /*　画面サイズが767px以下の場合読み込む　*/
   body { font-size: 1.4rem; /* 16px */ }
-  h1 { font-size: 2.4rem;}
+  h1 { font-size: 2.6rem;}
   h2 { font-size: 2.2rem;}
   h4 { font-size: 1.8rem;}
   h5 { font-size: 1.6rem;}
@@ -16,6 +14,7 @@ html {
   a { font-size: 1.4rem;}
   .btn { font-size: 1.4rem;}
   .hand_icon { font-size: 2.4rem;}
+  .header__box--inside:after { border-width: 0 0 3rem 3rem;}
 }
 
 @media screen and (min-width:768px){
@@ -30,5 +29,8 @@ html {
   a { font-size: 1.6rem;}
   .btn { font-size: 1.6rem;}
   .hand_icon { font-size: 4rem;}
+  .header__box--inside:after { border-width: 0 0 4rem 4rem;}
+  .dropdown-menu { padding: 1rem 1rem; }
+  .dropdown-item { padding: 0 3rem; }
 }
 
