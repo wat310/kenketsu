@@ -1,0 +1,34 @@
+// font-sizeをレスポンシブに
+html {
+	font-size: 62.5%; /* 16px x 0.625 = 10px(=1rem) */
+}
+
+
+
+@media screen and (max-width:767px) {
+  /*　画面サイズが767px以下の場合読み込む　*/
+  body { font-size: 1.4rem; /* 16px */ }
+  h1 { font-size: 2.4rem;}
+  h2 { font-size: 2.2rem;}
+  h4 { font-size: 1.8rem;}
+  h5 { font-size: 1.6rem;}
+  i { font-size: 1.6rem;}
+  a { font-size: 1.4rem;}
+  .btn { font-size: 1.4rem;}
+  .hand_icon { font-size: 2.4rem;}
+}
+
+@media screen and (min-width:768px){
+  /*　画面サイズが768px以上の場合読み込む　*/
+  body { font-size: 1.6rem; /* 16px */ }
+  h1 { font-size: 4rem;}
+  h2 { font-size: 3rem;}
+  h4 { font-size: 2.4rem;}
+  h5 { font-size: 2rem;}
+  i { font-size: 2rem;}
+  b { font-size: 2rem;}
+  a { font-size: 1.6rem;}
+  .btn { font-size: 1.6rem;}
+  .hand_icon { font-size: 4rem;}
+}
+
