@@ -1,27 +1,28 @@
 = render partial:"shared/header"
 .sign_box.row
-  .sign_main.mx-auto
-    %h2.sign_title ログイン
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .outside_field#upper
-        .field
-          .field__input
-            .field__input__label
-              = f.label :email, "メールアドレス"
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
-        .field
-          .field__input
-            .field__input__label
-              = f.label :password, "パスワード"
-            = f.password_field :password, autocomplete: "new-password", class: "input", placeholder:"7文字以上"
-        .field.row
-          = f.submit "ログイン", class:'btn btn-success mx-auto submit_btn'
-      .outside_field#lower
-        .field
-          .login_text
-            アカウントをお持ちでない方はこちら
-        .field.row
-          = link_to'新規登録', new_user_registration_path, class: 'btn btn-primary lower_btn mx-auto'
+  .col-12.col-sm-10.col-lg-8.mx-auto
+    .sign_main.mx-auto
+      %h2.sign_title ログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .outside_field#upper
+          .field
+            .field__input
+              .field__input__label
+                = f.label :email, "メールアドレス"
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input col-12"
+          .field
+            .field__input
+              .field__input__label
+                = f.label :password, "パスワード"
+              = f.password_field :password, autocomplete: "new-password", class: "input col-12", placeholder:"7文字以上"
+          .field.row
+            = f.submit "ログイン", class:'btn btn-success mx-auto submit_btn'
+        .outside_field#lower
+          .field
+            .login_text.text-center
+              アカウントをお持ちでない方はこちら
+          .field.row
+            = link_to'新規登録', new_user_registration_path, class: 'btn btn-primary lower_btn mx-auto'
     -# = render "devise/shared/links"
 
 -# %h2 ログイン
