@@ -1,7 +1,9 @@
-%header.header.mx-suto
-  .header__box
-    .header__box--inside.row
-      .header__box--inside__textbox.col-6{style: 'padding: 0 3%'}
-        = fa_icon "hand-holding-heart", class: 'icon fa-flip-horizontal'
-        %h1.header__box--inside__textbox__title{style: 'margin: 0'} Red Donation
-        = fa_icon "hand-holding-heart", class: 'icon'
+%header.header
+  .header__box.d-flex.align-items-center
+    .header__box--inside.row.my-2.mx-2.mx-auto.d-flex.align-items-center
+      .col-0.col-md-2
+      .icon_box.col-2.col-md-1
+        = fa_icon "hand-holding-heart", class: 'icon fa-flip-horizontal hand_icon float-right'
+      %h1.header__box--inside__title.col-8.col-md-6{style: 'margin: 0', } Red Donation
+      .icon_box.col-2.col-md-1
+        = fa_icon "hand-holding-heart", class: 'icon hand_icon'
