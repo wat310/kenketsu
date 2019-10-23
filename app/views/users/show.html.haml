@@ -29,7 +29,7 @@
       .row
         .difference_text.col-6.text-right
           残り
-        - if @difference > 7
+        - if @difference >= 7
           .day_boxt--black.col-6.text-left
             = @difference
             日
