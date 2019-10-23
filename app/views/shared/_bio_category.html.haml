@@ -23,19 +23,47 @@
           - if record.present?
             -case number
             - when 0
-              = record.ALT
+              - if record.ALT >= 8 && record.ALT <= 49
+                = record.ALT
+              - else
+                .out-range
+                  = record.ALT
             - when 1
-              = record.GTP
+              - if record.GTP >= 9 && record.GTP <= 68
+                = record.GTP
+              - else
+                .out-range
+                  = record.GTP
             - when 2
-              = record.TP
+              - if record.TP >= 6.6 && record.TP <= 8.2
+                = record.TP
+              - else
+                .out-range
+                  = record.TP
             - when 3
-              = record.ALB
+              - if record.ALB >= 4 && record.ALB <= 5.1
+                = record.ALB
+              - else
+                .out-range
+                  = record.ALB
             - when 4
-              = record.AperG
+              - if record.AperG >= 1.3 && record.AperG <= 2.1
+                = record.AperG
+              - else
+                .out-range
+                  = record.AperG
             - when 5
-              = record.CHOL
+              - if record.CHOL >= 140 && record.CHOL <= 259
+                = record.CHOL
+              - else
+                .out-range
+                  = record.CHOL
             - when 6
-              = record.GA
+              - if record.GA < 16.5
+                = record.GA
+              - else
+                .out-range
+                  = record.GA
           - else
             記録なし
     // 位置合わせ用のマージン

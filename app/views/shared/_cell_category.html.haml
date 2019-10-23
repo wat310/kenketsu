@@ -25,21 +25,74 @@
           - if record.present?
             -case number
             - when 0
-              = record.RBC
+              - if user.sex == "男"
+                - if record.RBC >= 418 && record.RBC <= 560
+                  = record.RBC
+                - else
+                  .out-range
+                    = record.RBC
+              - else
+                - if record.RBC >= 384 && record.RBC <= 504
+                  = record.RBC
+                - else
+                  .out-range
+                    = record.RBC
             - when 1
-              = record.Hb
+              - if user.sex == "男"
+                - if record.Hb >= 12.7 && record.Hb <= 17
+                  = record.Hb
+                - else
+                  .out-range
+                    = record.Hb
+              - else
+                - if record.Hb >= 11 && record.Hb <= 14.8
+                  = record.Hb
+                - else
+                  .out-range
+                    = record.Hb
             - when 2
-              = record.Ht
+              - if user.sex == "男"
+                - if record.Ht >= 38.8 && record.Ht <= 50
+                  = record.Ht
+                - else
+                  .out-range
+                    = record.Ht
+              - else
+                - if record.Ht >= 34.6 && record.Ht <= 44.6
+                  = record.Ht
+                - else
+                  .out-range
+                    = record.Ht
             - when 3
-              = record.MCV
+              - if record.MCV >= 83 && record.MCV <= 99.5
+                = record.MCV
+              - else
+                .out-range
+                  = record.MCV
             - when 4
-              = record.MCH
+              - if record.MCH >= 26.8 && record.MCH <= 33.5
+                = record.MCH
+              - else
+                .out-range
+                  = record.MCH
             - when 5
-              = record.MCHC
+              - if record.MCHC >= 31.7 && record.MCHC <= 35.2
+                = record.MCHC
+              - else
+                .out-range
+                  = record.MCHC
             - when 6
-              = record.WBC
+              - if record.WBC >= 38 && record.WBC <= 89
+                = record.WBC
+              - else
+                .out-range
+                  = record.WBC
             - when 7
-              = record.PLT
+              - if record.PLT >= 17 && record.PLT <= 36.5
+                = record.PLT
+              - else
+                .out-range
+                  = record.PLT
           - else
             記録なし
     // 位置合わせ用のマージン

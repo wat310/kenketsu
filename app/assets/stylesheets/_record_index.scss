@@ -85,6 +85,10 @@
         height: 40px;
         background-color: white;
         padding: 5px 15px;
+
+        .out-range {
+          color: red;
+        }
       }
 
       .result1, .result3 {
@@ -97,7 +101,7 @@
       }
 
       .standard {
-        color: red;
+        color: #6d6d6d;
       }
 
       .card {
