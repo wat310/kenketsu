@@ -18,11 +18,21 @@
 
     &__date {
 
-      &__text {
+      &__title {
         background-color: $day-background;
         border: $date-outside-border;
         border-right: $date-border;
+
+        &--upper {
+          color: #ff007f;
+        }
+  
+        &--lower {
+          color: black;
+        }
       }
+
+      
 
       // .date_outside {
       //   border: $date-outside-border;
@@ -32,7 +42,15 @@
       &__result {
         padding: 0;
         background-color: $day-background;
-        color: white;
+
+        .none_text {
+          color: white;
+        }
+
+        .upper_text {
+          color: #ff007f;
+        }
+
       }
 
       .date_result1 {
