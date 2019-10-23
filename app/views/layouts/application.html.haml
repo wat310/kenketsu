@@ -12,12 +12,29 @@
     -# %script{:crossorigin => "anonymous", :integrity => "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"}
     %script{:crossorigin => "anonymous", :integrity => "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy", :src => "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"}
     -# %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
+    
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.min.css", :rel => "stylesheet"}/
     %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.1.0/css/all.css", :integrity => "sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt", :rel => "stylesheet"}/
 
     %link{:href => "https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css", :rel => "stylesheet"}/
     %script{:src => "https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"}
 
+    -# %link{:href => "assets/css/default.css", :rel => "stylesheet"}/
+    -# %link{:href => "assets/css/default.date.css", :rel => "stylesheet"}/
+    
+    -# %script{:src => "app/assets/pickadate/picker.js"}
+    -# %script{:src => "app/assets/pickadate/picker.date.js"}
+    -# %script{:src => "app/assets/pickadate/legacy.js"}
+    -# %script{:src => "app/assets/pickadate/lang-ja.js"}
+
+    // pickadate.jsのファイル
+    %link{:href => "./css/default.css", :rel => "stylesheet"}
+    %link{:href => "./css/default.date.css", :rel => "stylesheet"}
+    %script{:src => "./pickadate/picker.js"}
+    %script{:src => "./pickadate/picker.date.js"}
+    %script{:src => "./pickadate/legacy.js"}
+    %script{:src => "./pickadate/lang-ja.js"}
+    %script{:src => "./pickadate/pickadate.js"}
 
   .container-fluid
     %body
