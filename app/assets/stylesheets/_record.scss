@@ -6,9 +6,9 @@
       margin-top: 15px;
     }
 
-    &__add-btn {
-      margin-top: 15px;
-    }
+    // &__add-btn {
+    //   margin-top: 15px;
+    // }
   }
 
   .input_top {
@@ -43,11 +43,11 @@
   
       .record_select {
         height: 40px;
+        border: solid 1px gray;
       }
   
       .record_date {
         height: 50px;
-        font-size: 20px;
         text-align: center;
       }
   

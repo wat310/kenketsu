@@ -25,7 +25,10 @@ class RecordsController < ApplicationController
     else
       redirect_to new_record_path
     end
+  end
 
+  def update
+    
   end
 
 
