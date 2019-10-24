@@ -4,7 +4,7 @@ class RecordsController < ApplicationController
 
   def index
     @record = Record.all
-    @records_search = Record.where(user_id: current_user.id).limit(3).order(:created_at)
+    @records_search = Record.where(user_id: current_user.id).limit(3).order(:donation_day)
     @records = @records_search.to_a
 
     @num = 3 - @records.count
