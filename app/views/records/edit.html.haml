@@ -4,7 +4,10 @@
 .record_main
   .record_main__box.row
     .record_main__box__text.mx-auto
-      %h2 献血記録の作成
+      %h2.text-center 献血記録の編集
+      %h4.text-center
+        = @record.donation_day
+        の記録
   -# = form_with model: @record, url: new_record_path, local: true do |f|
   = form_for @record do |f|
     .input_top
@@ -113,5 +116,5 @@
                   血小板数(PLT)
                 = f.text_field :PLT, class: "text_field col-12 col-lg-6", placeholder: "数字で入力"
     .btn_box.row
-      = f.submit "記録する", class: "btn btn-primary btn-block col-12 col-lg-6 record_btn mx-auto"
+      = f.submit "編集する", class: "btn btn-success btn-block col-12 col-lg-6 record_btn mx-auto"
       -# = fa_icon "save", class: "save"

@@ -43,14 +43,13 @@
         padding: 0;
         background-color: $day-background;
 
-        .none_text {
-          color: white;
-        }
-
-        .upper_text {
+        .day_text {
           color: #ff007f;
         }
 
+        .none_text {
+          color: white;
+        }
       }
 
       .date_result1 {

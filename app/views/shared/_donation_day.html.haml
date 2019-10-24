@@ -11,11 +11,11 @@
       .index_box__field__date__result.col-4.text-center.float-left{class: "date_result#{i}"}
         .col-12{style: "padding: 0"}
           - if record.present?
-            .upper_text
-              = record.donation_day
+            -# .upper_text
+              -# = record.donation_day
+            = link_to "#{record.donation_day}", edit_record_path(record), class: "upper_text day_text"
           - else record.present?
-            .none_text
-              記録なし
+            = link_to "記録なし", "#", class: "upper_text none_text"
         .col-12{style: "padding: 0"}
           - if record.present?
             = record.inspection_method_i18n

@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root "users#show"
 
   resources :users
-  resources :records
+  resources :records do
+    collection do
+      get 'history'
+    end
+  end
   resources :schedules
 end

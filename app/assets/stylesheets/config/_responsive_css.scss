@@ -15,6 +15,7 @@ html {
   .btn { font-size: 1.4rem;}
   .hand_icon { font-size: 2.4rem;}
   .header__box--inside:after { border-width: 0 0 3rem 3rem;}
+  .upper_text { font-size: 1.2rem; }
 }
 
 @media screen and (min-width:768px){
@@ -31,6 +32,6 @@ html {
   .hand_icon { font-size: 4rem;}
   .header__box--inside:after { border-width: 0 0 4rem 4rem;}
   .dropdown-menu { padding: 1rem 1rem; }
-  .dropdown-item { padding: 0 3rem; }
+  // .dropdown-item { padding: 0 3rem; }
 }
 

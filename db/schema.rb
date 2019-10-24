@@ -14,22 +14,22 @@ ActiveRecord::Schema.define(version: 2019_10_23_022639) do
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "inspection_method", null: false
-    t.date "donation_day", null: false
+    t.string "donation_day", null: false
     t.integer "ALT"
     t.integer "GTP"
-    t.integer "TP"
-    t.integer "ALB"
-    t.integer "AperG"
+    t.float "TP"
+    t.float "ALB"
+    t.float "AperG"
     t.integer "CHOL"
-    t.integer "GA"
+    t.float "GA"
     t.integer "RBC"
-    t.integer "Hb"
-    t.integer "Ht"
-    t.integer "MCV"
-    t.integer "MCH"
-    t.integer "MCHC"
+    t.float "Hb"
+    t.float "Ht"
+    t.float "MCV"
+    t.float "MCH"
+    t.float "MCHC"
     t.integer "WBC"
-    t.integer "PLT"
+    t.float "PLT"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
