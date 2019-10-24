@@ -9,7 +9,7 @@
       - if @records.length == 0
         前回の履歴はありません
       - else
-        = @prev_day.strftime("%Y年%m月%d日")
+        = @prev_day
     .date_text.col-12.text-center
       %h4 次回の献血予定日
     .day_box.col-12.col-md-10.text-center.mx-auto
@@ -27,17 +27,21 @@
       %h4 献血予定日まで
     .day_box.col-12.col-lg-10.text-center.mx-auto
       .row
-        .difference_text.col-6.text-right
-          残り
-        - if @difference >= 7
-          .day_boxt--black.col-6.text-left
-            = @difference
-            日
-        - elsif @difference <= 6 && @difference >= 4
-          .day_box--blue.col-6.text-left
-            = @difference
-            日
+        - if @difference.present?
+          .difference_text.col-6.text-right
+            残り
+          - if @difference >= 7
+            .day_boxt--black.col-6.text-left
+              = @difference
+              日
+          - elsif @difference <= 6 && @difference >= 4
+            .day_box--blue.col-6.text-left
+              = @difference
+              日
+          - else
+            .day_box--red.col-6.text-left
+              = @difference
+              日
         - else
-          .day_box--red.col-6.text-left
-            = @difference
-            日
+          .day_boxt--black.col-12.text-center
+            予定日が設定されていません

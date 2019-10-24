@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user, only: [:show, :edit, :update]
-  before_action :schedule_info, only: [:show, :update]
+  before_action :schedule_info, only: :show
 
   require 'date'
 
@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     @prev_day = @records.last.donation_day if @records.length > 0
 
     today = Date.today
-    reserve = Date.strptime(@schedule.next_date,'%Y年%m月%d日')
+    reserve = Date.strptime(@schedule.next_date,'%Y年%m月%d日') if @schedule.next_date != nil
     # to_iがないと2/1のような表記になってしまう
-    @difference = (reserve - today).to_i
+    @difference = (reserve - today).to_i if reserve != nil
   end
 
   def update

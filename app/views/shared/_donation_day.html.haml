@@ -11,10 +11,10 @@
       .index_box__field__date__result.col-4.text-center.float-left{class: "date_result#{i}"}
         .col-12{style: "padding: 0"}
           - if record.present?
-            .upper_text
+            .upper_text.day_text
               = record.donation_day
           - else record.present?
-            .none_text
+            .upper_text.none_text
               記録なし
         .col-12{style: "padding: 0"}
           - if record.present?
