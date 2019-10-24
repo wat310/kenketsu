@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     @records_search = Record.where(user_id: current_user.id).order(:created_at)
     @records = @records_search.to_a
     @prev_day = @records.last.donation_day if @records.length > 0
-
     today = Date.today
     reserve = Date.strptime(@schedule.next_date,'%Y年%m月%d日') if @schedule.next_date != nil
     # to_iがないと2/1のような表記になってしまう

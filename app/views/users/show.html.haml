@@ -4,9 +4,18 @@
 .row
   .col-12.col-sm-10.col-lg-7.mx-auto
     .date_text.col-12.text-center
+      %h4 これまでの献血回数
+    .day_box.col-12.col-md-10.text-center.mx-auto
+      - if @records.empty?
+        0回
+      - else
+        = @records.length
+        回
+
+    .date_text.col-12.text-center
       %h4 前回の献血日
     .day_box.col-12.col-md-10.text-center.mx-auto
-      - if @records.length == 0
+      - if @records.empty?
         前回の履歴はありません
       - else
         = @prev_day
