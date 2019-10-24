@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :find_user
+  before_action :find_record, only: [:edit, :update]
 
   def index
     @record = Record.all
@@ -27,8 +28,17 @@ class RecordsController < ApplicationController
     end
   end
 
-  def update
+  def edit
     
+  end
+
+  def update
+    @record.update(record_params)
+    if @record.save
+      redirect_to action: 'index'
+    else
+      redirect_to edit_record_path(@record)
+    end
   end
 
 
@@ -36,6 +46,10 @@ class RecordsController < ApplicationController
 
   def find_user
     @user = User.find_by(id: current_user.id)
+  end
+
+  def find_record
+    @record = Record.find(params[:id])
   end
 
   def record_params

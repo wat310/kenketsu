@@ -6,7 +6,6 @@
     .record_main__box__text.mx-auto
       %h2 献血履歴
   .record_main__box.row
-    -# .record_main__box__add-btn.mx-auto
     = link_to "検査履歴の作成", new_record_path, class: 'btn btn-info col-6 col-lg-4 mx-auto',style: "margin-top: 15px"
 
   - if @records[0] == nil
