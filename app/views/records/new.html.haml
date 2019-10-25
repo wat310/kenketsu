@@ -11,14 +11,14 @@
       .record_box.row
         .field_main.col-sm-12
           %h4.box_title.text-center 献血方法、献血日
-          .input_field.col-lg-6.mx-auto
+          .input_field.col-md-6.mx-auto
             = f.label :inspection_method, class: "record_label row" do
               .record_label__inner.inner_text.col-12.col-lg-6
                 献血方法
               .record_label__inner.col-12.col-lg-6
                 = f.select :inspection_method, Record.inspection_methods_i18n.invert, { prompt: "---" }, class: "record_select col-12"
 
-          .input_field.col-lg-6.mx-auto
+          .input_field.col-md-6.mx-auto
             = f.label :donation_day, class: "record_label row" do
               .record_label__inner.col-12.col-lg-6
                 献血日

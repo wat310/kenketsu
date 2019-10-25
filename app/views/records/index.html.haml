@@ -6,7 +6,7 @@
     .record_main__box__text.mx-auto
       %h2 献血履歴
   .record_main__box.row
-    = link_to "検査履歴の作成", new_record_path, class: 'btn btn-info col-6 col-lg-4 mx-auto',style: "margin-top: 15px"
+    = link_to "検査履歴の作成", new_record_path, class: 'btn btn-info col-6 col-md-4 mx-auto',style: "margin-top: 15px"
 
   - if @records[0] == nil
     .empty_text.row
@@ -18,14 +18,14 @@
   - else
     .record_title.row
       -# .mx-auto
-      .record_title--upper.col-12.col-lg-6.text-center.text-lg-right.float-left
+      .record_title--upper.col-12.col-md-6.text-center.text-lg-right.float-left
         %h5 これまでの献血記録
-      .record_title--lower.col-12.col-lg-6.text-center.text-lg-left.float-right
+      .record_title--lower.col-12.col-md-6.text-center.text-lg-left.float-right
         %h5 (過去3回分を表示します)
     = render partial:"shared/record_biochemistry", locals: { records: @records }
 
     = render partial:"shared/record_blood_cell", locals: { records: @records, user: @user }
 
   .bottom_box.row
-    .return_btn.btn.btn-secondary.col-10.col-lg-4.mx-auto
+    .return_btn.btn.btn-secondary.col-6.col-md-4.mx-auto
       ページの先頭に戻る
