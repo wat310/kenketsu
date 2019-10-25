@@ -14,7 +14,7 @@
             .field__input
               .field__input__label
                 = f.label :password, "パスワード"
-              = f.password_field :password, autocomplete: "new-password", class: "input col-12", placeholder:"7文字以上"
+              = f.password_field :password, autocomplete: "new-password", class: "input col-12"
           .field.row
             = f.submit "ログイン", class:'btn btn-success mx-auto submit_btn'
         .outside_field#lower
