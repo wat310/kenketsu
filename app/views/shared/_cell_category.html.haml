@@ -25,7 +25,7 @@
           - if record.present?
             -case number
             - when 0
-              - if user.sex == "男"
+              - if user.sex == "男性"
                 - if record.RBC >= 418 && record.RBC <= 560
                   = record.RBC
                 - else
@@ -38,7 +38,7 @@
                   .out-range
                     = record.RBC
             - when 1
-              - if user.sex == "男"
+              - if user.sex == "男性"
                 - if record.Hb >= 12.7 && record.Hb <= 17
                   = record.Hb
                 - else
@@ -51,7 +51,7 @@
                   .out-range
                     = record.Hb
             - when 2
-              - if user.sex == "男"
+              - if user.sex == "男性"
                 - if record.Ht >= 38.8 && record.Ht <= 50
                   = record.Ht
                 - else
@@ -107,20 +107,20 @@
             .standard.col-12.col-lg-6.float-left
               - case number
               - when 0
-                - if user.sex == "男"
+                - if user.sex == "男性"
                   基準値(男性): 418〜560×10
                 - else
                   基準値(女性): 384〜504×10
                 %sup 4
                 &#047;μL
               - when 1
-                - if user.sex == "男"
+                - if user.sex == "男性"
                   基準値(男性): 12.7〜17.0
                 - else
                   基準値(女性): 11.0〜14.8
                 g&#047;dL
               - when 2
-                - if user.sex == "男"
+                - if user.sex == "男性"
                   基準値(男性): 38.8〜50.0
                 - else
                   基準値(女性): 34.6〜44.6

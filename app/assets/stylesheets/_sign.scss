@@ -14,10 +14,12 @@
       // border: solid 1.5px black;
       padding: 20px 20px 0 20px;
 
-      
-
       .field {
         margin-bottom: 20px;
+
+        // &__input {
+
+        // }
   
         .input {
           // width: 350px;
@@ -25,7 +27,7 @@
           padding: 10px;
         }
       }
-  
+
       .submit_btn {
         width: 70%;
         // margin-bottom: 15px;
@@ -48,5 +50,12 @@
       border-bottom: solid 1.5px black;
       margin-bottom: 20px;
     }
+  }
+
+  .toggle-on.btn {
+    padding-right: 0.75rem;
+  }
+  .toggle-off.btn {
+    padding-left: 0.75rem;
   }
 }
