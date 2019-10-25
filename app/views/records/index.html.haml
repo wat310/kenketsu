@@ -17,11 +17,12 @@
           検査履歴の作成ボタンで記録を作成してください
   - else
     .record_title.row
-      -# .mx-auto
-      .record_title--upper.col-12.col-md-6.text-center.text-lg-right.float-left
+      .record_title--upper.col-12.col-md-6.text-center.text-md-right.float-left
         %h5 これまでの献血記録
-      .record_title--lower.col-12.col-md-6.text-center.text-lg-left.float-right
+      .record_title--lower.col-12.col-md-6.text-center.text-md-left.float-right
         %h5 (過去3回分を表示します)
+      .record_title--lower.col-12.col-md-6.mx-auto.text-center
+        %h5 日付をクリックすると編集できます
     = render partial:"shared/record_biochemistry", locals: { records: @records }
 
     = render partial:"shared/record_blood_cell", locals: { records: @records, user: @user }
