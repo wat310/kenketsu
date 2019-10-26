@@ -6,6 +6,7 @@
       padding-top: 10px;
       padding-bottom: 10px;
       border-top: dashed 3px $border-gray;
+      color: $record_title-color;
     }
   }
 
@@ -31,13 +32,6 @@
           color: black;
         }
       }
-
-      
-
-      // .date_outside {
-      //   border: $date-outside-border;
-      //   border-left: $date-border;
-      // }
 
       &__result {
         padding: 0;

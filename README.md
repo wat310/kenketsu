@@ -1,24 +1,39 @@
-# README
+# Red Donation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+献血の記録、閲覧ができるアプリケーションを目指しています。
 
-Things you may want to cover:
+## 制作背景
+駅前で献血の呼びかけをしているのをみて、気軽に献血に触れられるようなアプリケーションを作れないかと思い作成しました。
+ただし、日本赤十字社で「ラブラッド」という献血のアプリケーションがあるので、あくまで自分のこのアプリケーションは、プログラミングスクールで学んできたことを踏まえて自分なりに作成してみたものという認識にとどめておいてください。
 
-* Ruby version
+## 機能説明
+- フロントエンド
+  - Haml/Sassによるマークアップ
+  - Bootstrapを使用したレスポンシブデザイン
+- サーバーサイド
+  - ユーザー登録、サインイン機能(gem deviseを使用)
+  - 献血履歴の作成
+  - 献血履歴の編集
+  - 献血履歴の表示
+  - 日付の登録(pickadate.jsによるカレンダー)
 
-* System dependencies
+## デモ
+- カレンダーの表示
+![demo](https://gyazo.com/e80a28db76a3932bcae151e570838b5b/raw)
 
-* Configuration
+- 性別のtoggleボタン
+![demo](https://gyazo.com/444ebd9db0dec539b3a63622650c6fce/raw)
 
-* Database creation
+## 追加予定機能
+- 献血の記録を2~3年分を表示(現在は直近3回分のみ)
+- 家族などのグループを作成してグループ間のユーザーの記録は自由に閲覧できる機能
 
-* Database initialization
+## 工夫点
+- レスポンシブデザインの実装
+- 日付入力はpickadate.jsによるカレンダーで実装
+- 性別の登録にはBootstrapのtoggleを採用
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 苦労した点
+- レスポンシブデザイン。最初はBootstrapの扱いに慣れることができずに思い通りのビューができなかった。
+- pickadate.jsの実装。
