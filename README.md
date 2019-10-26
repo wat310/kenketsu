@@ -19,10 +19,10 @@
   - 日付の登録(pickadate.jsによるカレンダー)
 
 ## デモ
-- カレンダーの表示
+カレンダーの表示
 ![demo](https://gyazo.com/e80a28db76a3932bcae151e570838b5b/raw)
 
-- 性別のtoggleボタン
+性別のtoggleボタン
 ![demo](https://gyazo.com/444ebd9db0dec539b3a63622650c6fce/raw)
 
 ## 追加予定機能
