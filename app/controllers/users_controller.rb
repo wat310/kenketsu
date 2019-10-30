@@ -19,10 +19,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    # @user.update(update_params)
-    # if @user.save
-    #   redirect_to root_path
-    # end
+   
   end
 
   private

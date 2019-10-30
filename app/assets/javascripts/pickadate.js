@@ -7,6 +7,15 @@ $(document).on('turbolinks:load', function() {
     $('#schedule').pickadate({ // 選択できる最低限
       min: 0
     });
+
+    $('#time').pickatime({
+      format: 'HH:i', // 24時間表記
+        interval: 15,   // 表示間隔
+        min: [10,00],   // 予約開始時間
+        max: [20,00],    // 予約終了時間
+        clear: 'クリア',
+    });
+
     $('#donation_day').pickadate({ // 選択できる最大限
       max: 0
     });

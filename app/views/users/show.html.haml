@@ -23,13 +23,26 @@
       %h4 次回の献血予定日
     .day_box.col-12.col-md-10.text-center.mx-auto
       = form_for @schedule do |f|
-        %fieldset.fieldset
-          = f.text_field :next_date, class: "col-10 text-center", placeholder: "クリックしてください", id: "schedule"
+        = f.label :next_date, "■献血日", class: "col-10 text-left px-0"
+        %br
+        = f.text_field :next_date, class: "schedule col-10 text-center", placeholder: "クリックしてください", id: "schedule"
+
+        = f.label :next_time, "■献血時間", class: "col-10 text-left px-0"
+        %br
+        - if @schedule.next_time == nil
+          = f.text_field :next_time, class: "schedule col-10 text-center", placeholder: "クリックしてください", id: "time"
+        - else
+          = f.text_field :next_time, class: "schedule col-10 text-center", placeholder: "クリックしてください", id: "time", value: "#{@schedule.next_time.strftime('%H:%M')}"
         .col-12.px-0.text-left.text-md-center
-          ・変更する場合は上のフォームをクリック
+          ・変更する場合は「編集する」ボタンをクリック
         .col-12.px-0.text-left.text-md-center
-          ・変更後は必ず下の「記録する」ボタンを押してください
-        = f.submit "記録する", class: "btn btn-primary col-10 col-md-8", style: "margin-top: 10px"
+          ・変更後は必ず「記録する」ボタンを押してください
+        = f.submit "記録する", class: "btn btn-primary col-10 col-md-8", style: "margin-top: 10px", id: "show_submit"
+      - if @schedule.next_date != nil || @schedule.next_time != nil
+        .row.col-10.col-md-8.mx-auto.px-0{style: "margin-top: 10px"}
+          %button#schedule_edit.btn.btn-warning.col-7 編集する
+          .col-1.px-0
+          = link_to "クリア", schedule_path(@schedule), method: :delete, class: "btn btn-danger col-4"
 
 
     .date_text.col-12.text-center
@@ -47,10 +60,13 @@
             .day_box--blue.col-6.text-left
               = @difference
               日
-          - else
+          - elsif @difference <= 3 && @difference >= 0
             .day_box--red.col-6.text-left
               = @difference
               日
+          - else
+            .day_box--black.col-6.text-left
+              献血予定日を過ぎています
         - else
           .day_boxt--black.col-12.text-center
             予定日が設定されていません
