@@ -19,12 +19,20 @@
             .field__input
               -# .field__input__label
               = f.label :password, "パスワード"
-            = f.password_field :password, autocomplete: "new-password", class: "input col-12", placeholder:"7文字以上15文字以内"
+            = f.password_field :password, autocomplete: "new-password", class: "password input col-12", placeholder:"7文字以上15文字以内"
           .field
             .field__input
               -# .field__input__label
               = f.label :password_confirmation, "パスワード再入力"
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "input col-12", placeholder:"打ち間違えのないように注意"
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "password input col-12", placeholder:"打ち間違えのないように注意"
+
+          パスワードを
+          :css
+            .toggle.check, .toggle-on.check, .toggle-off.check { border-radius: 20rem; }
+            .toggle .toggle-handle { border-radius: 20rem; background-color: white;}
+
+          %input#passcheck{:type => "checkbox", "data-style" => "check"}
+
           .field
             = f.label :sex, "性別", class: "col-3 px-0"
             .col-12.text-center
