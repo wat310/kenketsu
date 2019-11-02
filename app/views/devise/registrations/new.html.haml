@@ -19,24 +19,27 @@
             .field__input
               -# .field__input__label
               = f.label :password, "パスワード"
-            = f.password_field :password, autocomplete: "new-password", class: "input col-12", placeholder:"7文字以上15文字以内"
+            = f.password_field :password, autocomplete: "new-password", class: "password input col-12", placeholder:"7文字以上15文字以内"
           .field
             .field__input
               -# .field__input__label
               = f.label :password_confirmation, "パスワード再入力"
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "input col-12", placeholder:"打ち間違えのないように注意"
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "password input col-12", placeholder:"打ち間違えのないように注意"
+
+          パスワードを
+          %input#passcheck{:type => "checkbox"}
+
           .field
             = f.label :sex, "性別", class: "col-3 px-0"
             .col-12.text-center
               クリックで切り替えられます
-            -# :css
-            -#   .toggle.sign { padding: 0}
+            .col-12.text-center
+              %span{style: 'color: blue'} 男性　
+              ⇄　
+              %span{style: 'color: red'} 女性
             .row
               .mx-auto
-                // 1.jsを使用する場合
                 = f.check_box :sex, { :checked => "checked", id: "sign_up-toggle" }, "男性", "女性"
-                // 2.直接hamlに記載する場合、ただし、リロードしないと正常に表示されない
-                -# = f.check_box :sex, { :checked => "checked", "data-toggle" => "toggle", "data-on"=> "男性", "data-off"=> "女性", "data-offstyle"=> "danger", "data-width" => "150", "data-style" => "sign"}, "男性", "女性"
 
           .field.row
             = f.submit "新規登録", class:'btn btn-primary mx-auto submit_btn', style: "margin-top: 20px"
