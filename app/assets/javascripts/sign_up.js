@@ -13,9 +13,10 @@ $(document).on('turbolinks:load', function() {
       onstyle: 'info',
       offstyle: 'secondary',
       width: '100',
+      style: 'check'
     });
 
-    $('#passcheck').change(function(){
+    $('#passcheck').change(function(){ // passwordの切り替え
       if ( $(this).prop('checked') ) {
           $('.password').attr('type','text');
       } else {

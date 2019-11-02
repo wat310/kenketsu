@@ -54,4 +54,11 @@
   .toggle-off.btn {
     padding-left: 0.75rem;
   }
+  .toggle.check, .toggle-on.check, .toggle-off.check {
+    border-radius: 20rem;
+  }
+  .toggle-handle {
+    border-radius: 20rem;
+    background-color: white;
+  }
 }
