@@ -5,8 +5,11 @@
   .record_main__box.row
     .record_main__box__text.mx-auto
       %h2 献血記録の作成
+  -# = form_for @record do |f|
+  // このform_withの書き方だと保存できない
   -# = form_with model: @record, url: new_record_path, local: true do |f|
-  = form_for @record do |f|
+  = form_with model: @record, local: true do |f|
+  
     .input_top
       .record_box.row
         .field_main.col-sm-12
