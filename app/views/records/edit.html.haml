@@ -9,7 +9,8 @@
         = @record.donation_day
         の記録
   -# = form_with model: @record, url: new_record_path, local: true do |f|
-  = form_for @record do |f|
+  -# = form_for @record do |f|
+  = form_with model: @record, local: true do |f|
     .input_top
       .record_box.row
         .field_main.col-sm-12

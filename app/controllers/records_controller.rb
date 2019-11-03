@@ -20,7 +20,6 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
-    # binding.pry
     if @record.save
       redirect_to records_path
     else
