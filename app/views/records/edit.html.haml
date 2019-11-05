@@ -8,8 +8,6 @@
       %h4.text-center
         = @record.donation_day
         の記録
-  -# = form_with model: @record, url: new_record_path, local: true do |f|
-  -# = form_for @record do |f|
   = form_with model: @record, local: true do |f|
     .input_top
       .record_box.row
@@ -29,7 +27,6 @@
                 %br
                 (タップorクリックで選択)
               .record_label__inner.col-12.col-lg-6
-                -# = f.date_field :donation_day, class: "record_date"
                 = f.text_field :donation_day, class: "record_date text-center col-12", placeholder: "クリックしてください", id: "donation_day"
 
     .record_box.row
