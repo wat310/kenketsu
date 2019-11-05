@@ -1,0 +1,23 @@
+- 2.times do |number|
+  .index_box.row
+    .index_box__title.col-12
+      -case number
+      - when 0
+        %h4.index_box__title__text.col-12.text-center 生化学検査
+      - when 1
+        %h4.index_box__title__text.col-12.text-center 血球計数検査
+      %h5.col-12.text-center{style: "padding-bottom: 10px"}
+        平均値を超えた数値は
+        %span{style: "color: red"}> 赤く
+        なります
+    .col-12{style: "margin-bottom: 20px"}
+      .index_box__field.col-12
+        // 日付の表記
+        = render partial:"shared/donation_day", locals: { records: @records}
+
+        // 結果の表記
+        -case number
+        - when 0
+          = render partial:"shared/bio_category", locals: { records: @records }
+        - when 1
+          = render partial:"shared/cell_category", locals: { records: @records, user: @user }
