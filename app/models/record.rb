@@ -5,19 +5,19 @@ class Record < ApplicationRecord
 
   validates :inspection_method, presence: true
   validates :donation_day, presence: true
-  validates :ALT, presence: true
-  validates :GTP, presence: true
-  validates :TP, presence: true
-  validates :ALB, presence: true
-  validates :AperG, presence: true
-  validates :CHOL, presence: true
-  validates :GA, presence: true
-  validates :RBC, presence: true
-  validates :Hb, presence: true
-  validates :Ht, presence: true
-  validates :MCV, presence: true
-  validates :MCH, presence: true
-  validates :MCHC, presence: true
-  validates :WBC, presence: true
-  validates :PLT, presence: true
+  validates :ALT, presence: true, numericality: {only_integer: true}
+  validates :GTP, presence: true, numericality: {only_integer: true}
+  validates :TP, presence: true, numericality: true
+  validates :ALB, presence: true, numericality: true
+  validates :AperG, presence: true, numericality: true
+  validates :CHOL, presence: true, numericality: {only_integer: true}
+  validates :GA, presence: true, numericality: true
+  validates :RBC, presence: true, numericality: {only_integer: true}
+  validates :Hb, presence: true, numericality: true
+  validates :Ht, presence: true, numericality: true
+  validates :MCV, presence: true, numericality: true
+  validates :MCH, presence: true, numericality: true
+  validates :MCHC, presence: true, numericality: true
+  validates :WBC, presence: true, numericality: {only_integer: true}
+  validates :PLT, presence: true, numericality: true
 end

@@ -7,13 +7,12 @@
         .outside_field#upper
           .field
             .field__input
-              .field__input__label
-                = f.label :email, "メールアドレス"
+              メールアドレス
               = f.email_field :email, autofocus: true, autocomplete: "email", class: "input col-12"
           .field
             .field__input
               .field__input__label
-                = f.label :password, "パスワード"
+                パスワード
               = f.password_field :password, autocomplete: "new-password", class: "input col-12"
           .field.row
             = f.submit "ログイン", class:'btn btn-success mx-auto submit_btn'
