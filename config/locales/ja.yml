@@ -1,4 +1,107 @@
 ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        # nickname: ニックネーム
+        nickname: ""
+        # email: メールアドレス
+        email: ""
+        password: パスワード
+        password_confirmation: 再入力
+      record:
+        inspection_method: 献血方法
+        donation_day: 献血日
+        ALT: ""
+        GTP: ""
+        TP: ""
+        ALB: ""
+        AperG: ""
+        CHOL: ""
+        GA: ""
+        RBC: ""
+        Hb: ""
+        Ht: ""
+        MCV: ""
+        MCH: ""
+        MCHC: ""
+        WBC: ""
+        PLT: ""
+    errors:
+      models:
+        user:
+          attributes:
+            nickname:
+              blank: ニックネームを入力してください
+              too_long: ニックネームは%{count}文字以内で入力してください
+              taken: "「%{value}」はすでに存在します"
+            email:
+              blank: メールアドレスを入力してください
+              taken: このメールアドレスはすでに存在します
+              invalid: このメールアドレスは不正な値です
+            password_confirmation:
+              confirmation: とパスワードが一致しません
+        record:
+          attributes:
+            ALT:
+              blank: ALTの数値を入力してください
+            GTP:
+              blank: γ-GTPの数値を入力してください
+            TP:
+              blank: 総蛋白の数値を入力してください
+            ALB:
+              blank: アルブミンの数値を入力してください
+            AperG:
+              blank: アルブミン対グロブリン比の数値を入力してください
+            CHOL:
+              blank: コレステロールの数値を入力してください
+            GA:
+              blank: グリコアルブミンの数値を入力してください
+            RBC:
+              blank: 赤血球数の数値を入力してください
+            Hb:
+              blank: ヘモグロビン量の数値を入力してください
+            Ht:
+              blank: ヘマトクリット量の数値を入力してください
+            MCV:
+              blank: 平均赤血球容積の数値を入力してください
+            MCH:
+              blank: 平均赤血球ヘモグロビン量の数値を入力してください
+            MCHC:
+              blank: 平均赤血球ヘモグロビン濃度の数値を入力してください
+            WBC:
+              blank: 白血球数の数値を入力してください
+            PLT:
+              blank: 血小板数の数値を入力してください
+  errors:
+    # format: "%{message}"
+    messages:
+      accepted: を受諾してください
+      blank: を入力してください
+      confirmation: と%{attribute}が一致しません
+      empty: を入力してください
+      equal_to: は%{count}にしてください
+      even: は偶数にしてください
+      exclusion: は予約されています
+      greater_than: は%{count}より大きい値にしてください
+      greater_than_or_equal_to: は%{count}以上の値にしてください
+      inclusion: は一覧にありません
+      invalid: は不正な値です
+      less_than: は%{count}より小さい値にしてください
+      less_than_or_equal_to: は%{count}以下の値にしてください
+      model_invalid: 'バリデーションに失敗しました: %{errors}'
+      not_a_number: 数値で入力してください
+      not_an_integer: 整数で入力してください
+      odd: は奇数にしてください
+      other_than: は%{count}以外の値にしてください
+      present: は入力しないでください
+      required: を入力してください
+      # taken: "%{value}はすでに存在します"
+      too_long: は%{count}文字以内で入力してください
+      too_short: は%{count}文字以上で入力してください
+      wrong_length: は%{count}文字で入力してください
+
   enums:
     record:
       inspection_method:

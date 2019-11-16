@@ -23,7 +23,8 @@ class RecordsController < ApplicationController
     if @record.save
       redirect_to records_path
     else
-      redirect_to new_record_path
+      # redirect_to new_record_path
+      render "new"
     end
   end
 
@@ -40,6 +41,9 @@ class RecordsController < ApplicationController
     end
   end
 
+  def sample
+
+  end
 
   private
 
