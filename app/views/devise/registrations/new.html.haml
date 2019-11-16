@@ -7,30 +7,32 @@
         .outside_field#upper
           .field
             .field__input
-              = f.label :nickname, "ニックネーム"
+              ニックネーム
             = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "input col-12", placeholder:"8文字以内"
             - if resource.errors.any?
-              %ul
+              %ul.error-message
                 - resource.errors.full_messages_for(:nickname).each do |message|
                   %li= message
           .field
             .field__input
-              = f.label :email, "メールアドレス"
+              メールアドレス
             = f.email_field :email, autofocus: true, autocomplete: "email", class: "input col-12"
             - if resource.errors.any?
-              = resource.errors.full_messages_for(:email).first
+              .error-message
+                = resource.errors.full_messages_for(:email).first
           .field
             .field__input
-              = f.label :password, "パスワード"
+              パスワード
             = f.password_field :password, autocomplete: "new-password", class: "password input col-12", placeholder:"7文字以上15文字以内"
             - if resource.errors.any?
-              = resource.errors.full_messages_for(:password).first
+              .error-message
+                = resource.errors.full_messages_for(:password).first
           .field
             .field__input
-              = f.label :password_confirmation, "パスワード再入力"
+              パスワード再入力
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "password input col-12", placeholder:"打ち間違えのないように注意"
             - if resource.errors.any?
-              %ul
+              %ul.error-message
                 - resource.errors.full_messages_for(:password_confirmation).each do |message|
                   %li= message
 
