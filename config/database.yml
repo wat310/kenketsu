@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: kenketsu_production
-  username: kenketsu
-  password: <%= ENV['KENKETSU_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
