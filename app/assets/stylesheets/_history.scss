@@ -1,0 +1,22 @@
+.history_main {
+
+  .history_box {
+    margin-top: 20px;
+
+    .history_single {
+      
+
+      &__category {
+        border: $date-border;
+        background-color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .category1 {
+        border-left: none;
+      }
+
+    }
+  }
+}

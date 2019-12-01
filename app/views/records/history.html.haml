@@ -1,0 +1,33 @@
+= render partial:"shared/header"
+= render partial:"shared/header_nav", locals: { user: @user }
+
+.record_main
+  .record_main__box.row
+    .record_main__box__text.mx-auto
+      %h2 今までの履歴
+  献血年
+  -# = form_with url: root_path, local: true do |f|
+  = select_tag 'history_year', options_for_select(@year_array), class: "history_year"
+
+  .history_header.row
+    .history_header__box.col-12
+      - 2.times do |number|
+        .history_header__category.col-4.float-left.text-center
+          - case number
+          - when 0
+            %h4 献血日
+          - when 1
+            %h4 献血方法
+  .history_main
+    - @first_view.each do |rec|
+      .history_box.row
+        .history_single.col-12.d-flex
+          - 2.times do |number|
+            .history_single__category.col-md-4.text-center{class: "category#{number}"}
+              - case number
+              - when 0
+                = rec.donation_day
+              - when 1
+                = rec.inspection_method_i18n
+          .col-md-3
+            記録閲覧
