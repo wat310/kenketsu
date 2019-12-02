@@ -1,9 +1,36 @@
-.history_main {
+.history_select {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  &__box {
+
+    &__label {
+      background-color: #d6eaff;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 10px;
+
+      &__select {
+
+        .history_year {
+          height: 40px;
+          background-color: $selectbox-color;
+          border: $selectbox-border;
+
+        }
+      }
+    }
+  }
+}
+
+
+
+.history_result {
 
   .history_box {
     margin-top: 20px;
 
-    .history_single {
+    .history_list {
       
 
       &__category {

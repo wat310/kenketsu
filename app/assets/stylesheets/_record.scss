@@ -39,7 +39,8 @@
   
       .record_select {
         height: 40px;
-        border: solid 1px gray;
+        border: $selectbox-border;
+        background-color: $selectbox-color;
       }
   
       .record_date {

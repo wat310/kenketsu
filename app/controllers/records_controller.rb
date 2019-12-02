@@ -44,13 +44,9 @@ class RecordsController < ApplicationController
   end
 
   def history
-    @history = Record.where(user_id: current_user.id).order(donation_day: "ASC")
-
-    # セレクトボックス用の配列
-    # history_year = Record.select(:donation_day)
-
     # donation_dayカラムのみを抽出
     history_year = Record.pluck(:donation_day)
+
     year_array = []
     history_year.each do |history|
       history_day = Date.strptime(history,'%Y年%m月%d日')
@@ -63,8 +59,10 @@ class RecordsController < ApplicationController
 
     # 最初に表示するレコードをdonation_dayであいまい検索する
     @first_view = Record.where(user_id: current_user.id).where("donation_day LIKE ?", "%#{last_year}%")
-    
-    # binding.pry
+  end
+
+  def select_year
+    @select_year = Record.where(user_id: current_user.id).where("donation_day LIKE ?", "%#{params[:keyword]}%")
   end
 
   private
