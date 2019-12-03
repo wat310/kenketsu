@@ -1,6 +1,9 @@
 class RecordsController < ApplicationController
   before_action :find_user
-  before_action :find_record, only: [:edit, :update]
+  before_action :find_record, only: [:edit, :update, :show]
+  before_action :records_all, only: [:show, :history]
+
+  require 'date'
 
   def index
     @record = Record.all
@@ -41,8 +44,58 @@ class RecordsController < ApplicationController
     end
   end
 
-  def sample
+  def show
+    # records_all = Record.where(user_id: current_user.id).order(donation_day: "DESC")
+    records = @records_all.to_a
+    count = records.count
+    time = 3 - count
+    @records = []
 
+    if count < 3
+      time.times do
+        records << nil
+        @records = records
+      end
+    else
+      if records.first == @record
+        @records = records.first(3)
+      elsif records.last == @record
+        @records = records.last(3)
+      else
+        i = records.index(@record) # 配列の番号
+        for num in i-1..i+1 do
+          record = records[num]
+          @records << record
+        end
+      end
+
+    end
+    
+  end
+
+  def history
+    if records_all.present?
+      # donation_dayカラムのみを抽出
+      history_year = Record.where(user_id: current_user.id).pluck(:donation_day)
+
+      year_array = []
+      history_year.each do |history|
+        history_day = Date.strptime(history,'%Y年%m月%d日')
+        history_year = history_day.year
+        year_array << history_year
+      end
+      # 重複を削除、降順に並べ替え
+      @year_array = year_array.uniq.sort!.reverse!
+      last_year = @year_array[0]
+
+      # 最初に表示するレコードをdonation_dayであいまい検索する
+      @first_view = Record.where(user_id: current_user.id).where("donation_day LIKE ?", "%#{last_year}%")
+    end
+    
+  end
+
+  def select_year
+    @select_year = Record.where(user_id: current_user.id).where("donation_day LIKE ?", "%#{params[:keyword]}%")
   end
 
   private
@@ -53,6 +106,10 @@ class RecordsController < ApplicationController
 
   def find_record
     @record = Record.find(params[:id])
+  end
+
+  def records_all
+    @records_all = Record.where(user_id: current_user.id).order(donation_day: "DESC")
   end
 
   def record_params

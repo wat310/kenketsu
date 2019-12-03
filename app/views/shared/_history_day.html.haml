@@ -1,0 +1,22 @@
+.index_box__field__date.row#date
+  .index_box__field__date__title.col-12.col-lg-3.px-lg-0
+    .index_box__field__date__title--upper.col-12.float-left.text-center.mx-auto.mx-lg-0
+      献血日
+    .index_box__field__date__title--lower.col-12.float-left.text-center.mx-auto.mx-lg-0
+      献血方法
+  .col-12.col-lg-6.px-lg-0
+    - records.each.with_index(1) do |record, i|
+      .index_box__field__date__result.col-4.text-center.float-left{class: "date_result#{i}"}
+        .col-12{style: "padding: 0"}
+          - if record.present?
+            .upper_text.day_text
+              = record.donation_day
+          - else record.present?
+            .upper_text.none_text
+              記録なし
+        .col-12{style: "padding: 0"}
+          - if record.present?
+            = record.inspection_method_i18n
+          - else record.present?
+            .none_text
+              記録なし

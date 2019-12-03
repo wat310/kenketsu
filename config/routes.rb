@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :records do
     collection do
       get 'history'
+      get 'select_year', defaults: { format: 'json' }
     end
   end
   resources :schedules

@@ -22,7 +22,6 @@
     .date_text.col-12.text-center
       %h4 次回の献血予定日
     .day_box.col-12.col-md-10.text-center.mx-auto
-      -# = form_for @schedule do |f|
       = form_with model: @schedule, local: true do |f|
         = f.label :next_date, "■献血日", class: "col-10 text-left px-0"
         %br
