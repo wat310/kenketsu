@@ -5,33 +5,38 @@
   .record_main__box.row
     .record_main__box__text.mx-auto
       %h2 今までの履歴
-  .history_select.row
-    .history_select__box.col-12
-      .history_select__box__label.col-12.col-md-6.mx-auto.d-flex
-        .history_select__box__label__year.col-6.text-center.my-auto
-          %h4 献血年を選択
-        .history_select__box__label__select.col-6
-          = select_tag 'history_year', options_for_select(@year_array), class: "history_year col-12"
+  - if @records_all.empty?
+    .empty_text.row
+      .empty_text__main.mx-auto
+        閲覧可能な献血履歴はありません
+  - else
+    .history_select.row
+      .history_select__box.col-12
+        .history_select__box__label.col-12.col-md-6.mx-auto.d-flex
+          .history_select__box__label__year.col-6.text-center.my-auto
+            %h4 献血年を選択
+          .history_select__box__label__select.col-6
+            = select_tag 'history_year', options_for_select(@year_array), class: "history_year col-12"
 
-  .history_header.row
-    .history_header__box.col-12
-      - 2.times do |number|
-        .history_header__category.col-6.col-md-4.float-left.text-center
-          - case number
-          - when 0
-            %h4 献血日
-          - when 1
-            %h4 献血方法
-  .history_result
-    - @first_view.each do |rec|
-      .history_box.row
-        .history_list.col-12.d-md-flex.align-items-center
-          - 2.times do |number|
-            .history_list__category.col-6.col-md-4.text-center.float-left{class: "category#{number}"}
-              - case number
-              - when 0
-                = rec.donation_day
-              - when 1
-                = rec.inspection_method_i18n
-          .col-10.offset-1.col-md-3.offset-md-1.float-md-left
-            = link_to "記録閲覧", new_record_path, class: 'btn btn-warning col-12'
+    .history_header.row
+      .history_header__box.col-12
+        - 2.times do |number|
+          .history_header__category.col-6.col-md-4.float-left.text-center
+            - case number
+            - when 0
+              %h4 献血日
+            - when 1
+              %h4 献血方法
+    .history_result
+      - @first_view.each do |rec|
+        .history_box.row
+          .history_list.col-12.d-md-flex.align-items-center
+            - 2.times do |number|
+              .history_list__category.col-6.col-md-4.text-center.float-left{class: "category#{number}"}
+                - case number
+                - when 0
+                  = rec.donation_day
+                - when 1
+                  = rec.inspection_method_i18n
+            .col-10.offset-1.col-md-3.offset-md-1.float-md-left
+              = link_to "記録閲覧", record_path(rec), class: 'btn btn-warning col-12'

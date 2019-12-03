@@ -21,12 +21,12 @@ $(document).on('turbolinks:load', function() {
       return lists;
     }
 
-    function appendList(lists, result_area) {
+    function appendList(record, lists, result_area) {
       var result =  `<div class='history_box row'>
                       <div class='history_list col-12 d-md-flex align-items-center'>
                         ${lists}
                         <div class='col-10 offset-1 col-md-3 offset-md-1 float-md-left'>
-                          <a href="/" class="btn btn-warning col-12">
+                          <a href="/records/${record.id}" class="btn btn-warning col-12">
                             記録閲覧
                           </a>
                         </div>
@@ -53,7 +53,7 @@ $(document).on('turbolinks:load', function() {
 
         records.forEach(function(record) { // jbuilderからのデータをforeachで分解
           var lists = createList(record); // リストを先に作成
-          appendList(lists, result_area); // リストを元にHTML作成
+          appendList(record, lists, result_area); // リストを元にHTML作成
         });
       })
       .fail(function() {
