@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function() {
           category = record.method;
         }
 
-        var list = `<div class="history_list__category col-4 text-center px-0 category${num}">
+        var list = `<div class="history_list__category col-6 col-md-4 text-center float-left category${num}">
                       ${category}
                     </div>`;
         lists += list;
@@ -23,9 +23,13 @@ $(document).on('turbolinks:load', function() {
 
     function appendList(lists, result_area) {
       var result =  `<div class='history_box row'>
-                      <div class='history_list col-12 d-flex'>
+                      <div class='history_list col-12 d-md-flex align-items-center'>
                         ${lists}
-                        <div class='col-3'>記録閲覧</div>
+                        <div class='col-10 offset-1 col-md-3 offset-md-1 float-md-left'>
+                          <a href="/" class="btn btn-warning col-12">
+                            記録閲覧
+                          </a>
+                        </div>
                       </div>
                     </div>`;
       result_area.append(result);

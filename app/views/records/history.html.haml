@@ -16,7 +16,7 @@
   .history_header.row
     .history_header__box.col-12
       - 2.times do |number|
-        .history_header__category.col-4.float-left.text-center
+        .history_header__category.col-6.col-md-4.float-left.text-center
           - case number
           - when 0
             %h4 献血日
@@ -25,13 +25,13 @@
   .history_result
     - @first_view.each do |rec|
       .history_box.row
-        .history_list.col-12.d-flex
+        .history_list.col-12.d-md-flex.align-items-center
           - 2.times do |number|
-            .history_list__category.col-4.text-center.px-0{class: "category#{number}"}
+            .history_list__category.col-6.col-md-4.text-center.float-left{class: "category#{number}"}
               - case number
               - when 0
                 = rec.donation_day
               - when 1
                 = rec.inspection_method_i18n
-          .col-4
-            記録閲覧
+          .col-10.offset-1.col-md-3.offset-md-1.float-md-left
+            = link_to "記録閲覧", new_record_path, class: 'btn btn-warning col-12'
