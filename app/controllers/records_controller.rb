@@ -68,9 +68,7 @@ class RecordsController < ApplicationController
           @records << record
         end
       end
-
     end
-    
   end
 
   def history
