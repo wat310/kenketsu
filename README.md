@@ -30,11 +30,16 @@ http://18.176.225.39
 ## デモ
 - カレンダーの表示
 
-![demo](https://gyazo.com/e80a28db76a3932bcae151e570838b5b/raw)
+<!-- ![demo](https://gyazo.com/e80a28db76a3932bcae151e570838b5b/raw) -->
+<img width="400" alt="demo_calendar" src="https://gyazo.com/0c4c1ccbbd82e924a5bbba54a9726106/raw">
 
-- 性別のtoggleボタン
+- パスワードの表示・非表示と性別のtoggleボタン
 
-![demo](https://gyazo.com/444ebd9db0dec539b3a63622650c6fce/raw)
+![demo](https://gyazo.com/43128a309f1ab642d126f2fdc42763dd/raw)
+
+- 記録一覧の非同期通信
+
+<img width="400" alt="demo_ajax" src="https://gyazo.com/d86a69b55f267c2fbd142c62b1780c13/raw">
 
 ## 追加予定機能
 - 献血の記録を2~3年分を表示(現在は直近3回分のみ)
