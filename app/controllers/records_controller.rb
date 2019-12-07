@@ -7,13 +7,19 @@ class RecordsController < ApplicationController
 
   def index
     @record = Record.all
-    @records_search = Record.where(user_id: current_user.id).limit(3).order(donation_day: "DESC")
-    @records = @records_search.to_a
+    @graph = Record.where(user_id: current_user.id).limit(3).order(donation_day: "ASC")
+    @records = @graph.to_a
 
     @num = 3 - @records.count
 
     @num.times do
       @records << nil
+    end
+
+    # グラフの基準線作成用の配列
+    @donation_days = []
+    @graph.each do |rec|
+      @donation_days << rec.donation_day
     end
   end
 
@@ -45,7 +51,6 @@ class RecordsController < ApplicationController
   end
 
   def show
-    # records_all = Record.where(user_id: current_user.id).order(donation_day: "DESC")
     records = @records_all.to_a
     count = records.count
     time = 3 - count
@@ -107,7 +112,7 @@ class RecordsController < ApplicationController
   end
 
   def records_all
-    @records_all = Record.where(user_id: current_user.id).order(donation_day: "DESC")
+    @records_all = Record.where(user_id: current_user.id).order(donation_day: "ASC")
   end
 
   def record_params

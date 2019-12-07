@@ -80,6 +80,8 @@
               - case number
               - when 0
                 基準値: 8〜49 IU/L
+                = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :ALT).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 8]} }, { name: "基準値上", data: days.map{|day| [day, 49]} } ], min: 0, max: 60
               - when 1
                 基準値: 9〜68 IU/L
               - when 2
