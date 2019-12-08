@@ -32,9 +32,9 @@
           // 結果の表記
           -case number
           - when 0
-            = render partial:"shared/bio_category", locals: { records: @records }
+            = render partial:"shared/bio_category", locals: { records: @records, graph: @graph, days: @donation_days }
           - when 1
-            = render partial:"shared/cell_category", locals: { records: @records, user: @user }
+            = render partial:"shared/cell_category", locals: { records: @records, user: @user, graph: @graph, days: @donation_days }
 
   .bottom_box.row
     .return_btn.btn.btn-secondary.col-6.col-md-4.mx-auto
