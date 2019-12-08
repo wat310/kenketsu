@@ -109,36 +109,58 @@
               - when 0
                 - if user.sex == "男性"
                   基準値(男性): 418〜560×10
+                  %sup 4
+                  &#032;&#047;μL
+                  = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :RBC).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 418]} }, { name: "基準値上", data: days.map{|day| [day, 560]} } ], min: 360, max: 600
                 - else
                   基準値(女性): 384〜504×10
-                %sup 4
-                &#047;μL
+                  %sup 4
+                  &#032;&#047;μL
+                  = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :RBC).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 384]} }, { name: "基準値上", data: days.map{|day| [day, 504]} } ], min: 320, max: 540
               - when 1
                 - if user.sex == "男性"
-                  基準値(男性): 12.7〜17.0
+                  基準値(男性): 12.7〜17.0&#032;g&#047;dL
+                  = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :Hb).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 12.7]} }, { name: "基準値上", data: days.map{|day| [day, 17]} } ], min: 10, max: 20
                 - else
-                  基準値(女性): 11.0〜14.8
-                g&#047;dL
+                  基準値(女性): 11.0〜14.8&#032;g&#047;dL
+                  = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :Hb).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 11]} }, { name: "基準値上", data: days.map{|day| [day, 14.8]} } ], min: 8, max: 18
               - when 2
                 - if user.sex == "男性"
-                  基準値(男性): 38.8〜50.0
+                  基準値(男性): 38.8〜50.0&#032;&#037;
+                  = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :Ht).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 38.8]} }, { name: "基準値上", data: days.map{|day| [day, 50]} } ], min: 35, max: 55
                 - else
-                  基準値(女性): 34.6〜44.6
-                &#037;
+                  基準値(女性): 34.6〜44.6&#032;&#037;
+                  = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :Ht).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 34.6]} }, { name: "基準値上", data: days.map{|day| [day, 44.6]} } ], min: 30, max: 50
               - when 3
                 基準値: 83.0〜99.5 fL
+                = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :MCV).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 83]} }, { name: "基準値上", data: days.map{|day| [day, 99.5]} } ], min: 75, max: 110
               - when 4
                 基準値: 26.8〜33.5 pg
+                = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :MCH).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 26.8]} }, { name: "基準値上", data: days.map{|day| [day, 33.5]} } ], min: 24, max: 36
               - when 5
                 基準値: 31.7〜35.2 %
+                = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :MCHC).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 31.7]} }, { name: "基準値上", data: days.map{|day| [day, 35.2]} } ], min: 30, max: 37
               - when 6
                 基準値: 38〜89×10
                 %sup 2
                 &#047;μL
+                = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :WBC).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 38]} }, { name: "基準値上", data: days.map{|day| [day, 89]} } ], min: 30, max: 100
               - when 7
                 基準値: 17.0〜36.5×10
                 %sup 4
                 &#047;μL
+                = line_chart [ { name: "記録", data: graph.map { |record| record.slice(:donation_day, :PLT).values }}, 
+                                { name: "基準値下", data: days.map{|day| [day, 17]} }, { name: "基準値上", data: days.map{|day| [day, 36.5]} } ], min: 10, max: 40
             .explanation.col-12.col-md-6.float-right
               - case number
               - when 0
