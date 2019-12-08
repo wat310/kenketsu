@@ -1,6 +1,6 @@
 - 8.times do |number|
   .index_box__field__category.row.d-flex.align-items-center
-    .index_box__field__category__title.col-12.col-lg-3
+    .index_box__field__category__title.col-12.col-md-3
       -case number
       - when 0
         赤血球数(RBC)
@@ -19,9 +19,9 @@
       - when 7
         血小板数(PLT)
 
-    .col-12.col-lg-6.px-lg-0
+    .col-12.col-md-6.px-md-0
       - @records.each.with_index(1) do |record, i|
-        .index_box__field__category__result.col-4.text-center.my-1.my-lg-0.float-left{class: "result#{i}"}
+        .index_box__field__category__result.col-4.text-center.my-1.my-md-0.float-left{class: "result#{i}"}
           - if record.present?
             -case number
             - when 0
@@ -96,15 +96,15 @@
           - else
             記録なし
     // 位置合わせ用のマージン
-    .col-lg-1
+    .col-md-1
     // ドロップダウンのボタン
-    .col-7.col-lg-2.mx-auto
-      %button.btn.btn-warning.col-12.col-lg-12.mx-auto{"aria-controls" => "example-#{number + 7}", "aria-expand" => "false", "data-target" => "#example-#{number + 7}", "data-toggle" => "collapse"} 詳細
-    .collapse.col-12.col-lg-10.mx-auto{id: "example-#{number + 7}"}
+    .col-7.col-md-2.mx-auto
+      %button.btn.btn-warning.col-12.col-md-12.mx-auto{"aria-controls" => "example-#{number + 7}", "aria-expand" => "false", "data-target" => "#example-#{number + 7}", "data-toggle" => "collapse"} 詳細
+    .collapse.col-12.col-md-10.mx-auto{id: "example-#{number + 7}"}
       .col-12
         .card.card-body.row
           .col-12
-            .standard.col-12.col-lg-6.float-left
+            .standard.col-12.col-md-6.float-left
               - case number
               - when 0
                 - if user.sex == "男性"
@@ -139,7 +139,7 @@
                 基準値: 17.0〜36.5×10
                 %sup 4
                 &#047;μL
-            .explanation.col-12.col-lg-6.float-right
+            .explanation.col-12.col-md-6.float-right
               - case number
               - when 0
                 赤血球は血液の主な細胞成分で、酸素を肺から各組織へ運ぶ働きを持っています。
