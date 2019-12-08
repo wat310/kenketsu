@@ -2,19 +2,64 @@ class RecordsController < ApplicationController
   before_action :find_user
   before_action :find_record, only: [:edit, :update, :show]
   before_action :records_all, only: [:show, :history]
+  # after_action -> { graph_days(@graph) }, only: [:index, :show]
+  # after_action ->(graph = @graph) { graph_days(graph) }, only: [:index, :show]
 
   require 'date'
 
   def index
     @record = Record.all
-    @records_search = Record.where(user_id: current_user.id).limit(3).order(donation_day: "DESC")
-    @records = @records_search.to_a
+    @graph = Record.where(user_id: current_user.id).limit(3).order(donation_day: "ASC")
+    @records = @graph.to_a
 
     @num = 3 - @records.count
 
     @num.times do
       @records << nil
     end
+
+    # グラフの基準線作成用の配列
+    @donation_days = []
+    @graph.each do |rec|
+      @donation_days << rec.donation_day
+    end
+  end
+
+  def show
+    records = @records_all.to_a
+    count = records.count
+    time = 3 - count
+    @records = []
+
+    if count < 3
+
+      time.times do
+        records << nil
+        @records = records
+      end
+      @graph = Record.where(user_id: current_user.id).limit(2).order(donation_day: "ASC")
+
+    else
+
+      if records.first == @record
+        @records = records.first(3)
+      elsif records.last == @record
+        @records = records.last(3)
+      else
+        i = records.index(@record) # 配列の番号
+        for num in i-1..i+1 do
+          record = records[num]
+          @records << record
+        end
+      end
+      @graph = @records
+    end
+
+    @donation_days = []
+    @graph.each do |rec|
+      @donation_days << rec.donation_day
+    end
+
   end
 
   def new
@@ -26,7 +71,6 @@ class RecordsController < ApplicationController
     if @record.save
       redirect_to records_path
     else
-      # redirect_to new_record_path
       render "new"
     end
   end
@@ -41,33 +85,6 @@ class RecordsController < ApplicationController
       redirect_to action: 'index'
     else
       redirect_to edit_record_path(@record)
-    end
-  end
-
-  def show
-    # records_all = Record.where(user_id: current_user.id).order(donation_day: "DESC")
-    records = @records_all.to_a
-    count = records.count
-    time = 3 - count
-    @records = []
-
-    if count < 3
-      time.times do
-        records << nil
-        @records = records
-      end
-    else
-      if records.first == @record
-        @records = records.first(3)
-      elsif records.last == @record
-        @records = records.last(3)
-      else
-        i = records.index(@record) # 配列の番号
-        for num in i-1..i+1 do
-          record = records[num]
-          @records << record
-        end
-      end
     end
   end
 
@@ -107,8 +124,15 @@ class RecordsController < ApplicationController
   end
 
   def records_all
-    @records_all = Record.where(user_id: current_user.id).order(donation_day: "DESC")
+    @records_all = Record.where(user_id: current_user.id).order(donation_day: "ASC")
   end
+
+  # def graph_days(graph)
+  #   @donation_days = []
+  #   graph.each do |rec|
+  #     @donation_days << rec.donation_day
+  #   end
+  # end
 
   def record_params
     params.require(:record).permit(

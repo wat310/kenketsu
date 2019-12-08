@@ -24,7 +24,7 @@
       .record_title--lower.col-12.col-md-6.mx-auto.text-center
         %h5 日付をクリックすると編集できます
 
-    = render partial:"shared/record_result", locals: { records: @records }
+    = render partial:"shared/record_result", locals: { records: @records, graph: @graph, days: @donation_days }
 
   .bottom_box.row
     .return_btn.btn.btn-secondary.col-6.col-md-4.mx-auto
