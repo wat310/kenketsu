@@ -9,7 +9,8 @@ class RecordsController < ApplicationController
 
   def index
     @record = Record.all
-    @graph = Record.where(user_id: current_user.id).limit(3).order(donation_day: "ASC")
+    @graph = Record.where(user_id: current_user.id).limit(3).order(donation_day: "DESC").to_a.reverse!
+    # @graphの並べ替え必要
     @records = @graph.to_a
 
     @num = 3 - @records.count
