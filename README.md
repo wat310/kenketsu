@@ -18,6 +18,8 @@ http://18.176.225.39
 - フロントエンド
   - Haml/Sassによるマークアップ
   - Bootstrapを使用したレスポンシブデザイン
+  - カレンダーの表示(pickadate.js)
+  - グラフの表示(gem Chartkickを使用)
 - サーバーサイド
   - ユーザー登録、サインイン機能(gem deviseを使用)
   - 献血履歴の作成
@@ -41,7 +43,7 @@ http://18.176.225.39
 
 <img width="400" alt="demo_ajax" src="https://gyazo.com/d86a69b55f267c2fbd142c62b1780c13/raw">
 
-- パスワードの表示・非表示と性別のtoggleボタン
+- グラフの表示
 
 ![](https://gyazo.com/3eeb336375ffe31df89999a7cbe2891b.png)
 
