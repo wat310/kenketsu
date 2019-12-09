@@ -31,7 +31,6 @@ http://18.176.225.39
 ## デモ
 - カレンダーの表示
 
-<!-- ![demo](https://gyazo.com/e80a28db76a3932bcae151e570838b5b/raw) -->
 <img width="400" alt="demo_calendar" src="https://gyazo.com/0c4c1ccbbd82e924a5bbba54a9726106/raw">
 
 - パスワードの表示・非表示と性別のtoggleボタン
@@ -41,6 +40,10 @@ http://18.176.225.39
 - 記録一覧の非同期通信
 
 <img width="400" alt="demo_ajax" src="https://gyazo.com/d86a69b55f267c2fbd142c62b1780c13/raw">
+
+- パスワードの表示・非表示と性別のtoggleボタン
+
+![](https://gyazo.com/3eeb336375ffe31df89999a7cbe2891b.png)
 
 ## 追加予定機能
 - 家族などのグループを作成してグループ間のユーザーの記録は自由に閲覧できる機能
