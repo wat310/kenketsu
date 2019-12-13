@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe User do
+describe "User" do
   describe '#create' do
     context 'can save' do # 保存できる時
 
