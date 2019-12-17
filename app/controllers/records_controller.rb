@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :find_user
+  before_action :find_user # テスト時にコメントアウト
   before_action :find_record, only: [:edit, :update, :show]
   before_action :records_all, only: [:show, :history]
   # after_action -> { graph_days(@graph) }, only: [:index, :show]
